@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->Siswa = new Siswa();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +23,9 @@ class SiswaController extends Controller
      */
     public function index()
     {
+        // $datas = [
+        //     'datas' => $this->Siswa->allData(),
+        // ];
         $datas = Siswa::all();
 
 

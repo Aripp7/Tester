@@ -72,7 +72,7 @@
                                             <form action="{{ route('siswa.destroy', $values->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{ url('editSiswa',$values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                <a href="{{ route('siswa.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
                                                 <a href="{{ url($values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
 
                                                 <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('siswa',$values->id)}}"> <span class="fas fa-trash"></span>

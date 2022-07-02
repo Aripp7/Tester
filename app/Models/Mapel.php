@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tendik extends Model
+class Mapel extends Model
 {
-    protected $table = "tendik";
+    protected $table = "mapel";
     public $timestamps = false;
 }

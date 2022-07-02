@@ -38,15 +38,26 @@ class TendikController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Tendik;
+        $model = new Tendik();
         $model->nama = $request->nama;
-        $model->alamat = $request->alamat;
-        $model->nohp = $request->nohp;
+        $model->Jenis_kelamin = $request->Jenis_kelamin;
+        $model->tgl_lahir = $request->tgl_lahir;
+        $model->tempat_lahir = $request->tempat_lahir;
+        $model->nip = $request->nip;
+        $model->alamat_jalan = $request->alamat_jalan;
+        $model->agama = $request->agama;
+
+        $model->kecamatan = $request->kecamatan;
+
+        $model->pangkat_golongan = $request->pangkat_golongan;
+
         $model->save();
 
+        // return $request;
 
 
-        return redirect('tendik');
+
+        return redirect()->route('tendik.index')->with('success', 'Data Berhasil di Input');
     }
 
     /**
@@ -68,7 +79,7 @@ class TendikController extends Controller
     public function edit($id)
     {
         $model =  Tendik::find($id);
-        return view('pegawai.edit', compact('model'));
+        return view('tendik.edit', compact('model'));
     }
 
     /**
@@ -80,15 +91,26 @@ class TendikController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model =  Tendik::find($id);
+        $model = new Tendik();
         $model->nama = $request->nama;
-        $model->alamat = $request->alamat;
-        $model->nohp = $request->nohp;
+        $model->Jenis_kelamin = $request->Jenis_kelamin;
+        $model->tgl_lahir = $request->tgl_lahir;
+        $model->tempat_lahir = $request->tempat_lahir;
+        $model->nip = $request->nip;
+        $model->alamat_jalan = $request->alamat_jalan;
+        $model->agama = $request->agama;
+
+        $model->kecamatan = $request->kecamatan;
+
+        $model->pangkat_golongan = $request->pangkat_golongan;
+
         $model->update();
 
+        // return $request;
 
 
-        return redirect('tendik');
+
+        return redirect()->route('tendik.index')->with('success', 'Data Berhasil di Update');
     }
 
     /**
@@ -101,6 +123,6 @@ class TendikController extends Controller
     {
         $model =  Tendik::find($id);
         $model->delete();
-        return redirect('tendik');
+        return redirect()->route('tendik.index')->with('success', 'Data Berhasil dihapus');
     }
 }

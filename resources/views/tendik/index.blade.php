@@ -23,6 +23,19 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
+                            @if(session()->has('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                {{session('success')}}
+
+                            </div>
+                            @endif
+                            @if(session()->has('error'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{session('error')}}
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            </div>
+                            @endif
                             <div class="card-header">
                                 <ol class="breadcrumb float-sm-left">
                                     <a href="addTendik" class="btn btn-primary">
@@ -39,10 +52,7 @@
                                             <!-- <th>No </th> -->
                                             <th>Nip </th>
                                             <th>Nama</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Agama</th>
-                                            <th>Kecamatan</th>
+
                                             <th>Alamat</th>
                                             <th>Pangkat</th>
                                             <th>Aksi</th>
@@ -60,10 +70,8 @@
 
                                             <td>{{ $values->nip }}</td>
                                             <td>{{ $values->nama }}</td>
-                                            <td>{{ $values->tempat_lahir }}</td>
-                                            <td>{{ $values->tanggal_lahir }}</td>
-                                            <td>{{ $values->agama }}</td>
-                                            <td>{{ $values->kecamatan }}</td>
+
+
                                             <td>{{ $values->alamat_jalan }}</td>
                                             <td>{{ $values->pangkat_golongan }}</td>
 
@@ -98,8 +106,12 @@
 </div>
 < </body>
 
-
-
-
+    <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(300, 0).slideUp(300, function() {
+                $(this).remove();
+            });
+        }, 5000);
+    </script>
     @endsection
     @section('content')

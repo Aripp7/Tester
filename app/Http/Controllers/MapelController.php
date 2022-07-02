@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tahun;
+use App\Models\Mapel;
 use Illuminate\Http\Request;
 
-class TahunController extends Controller
+class MapelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TahunController extends Controller
      */
     public function index()
     {
-        $datas = Tahun::all();
-        return view('tahun.index', compact('datas'));
+        $datas = Mapel::all();
+        return view('mapel.index', compact('datas'));
     }
 
     /**
@@ -25,8 +25,8 @@ class TahunController extends Controller
      */
     public function create()
     {
-        $model = new Tahun();
-        return view('tahun.add', compact('model'));
+        $model = new Mapel();
+        return view('mapel.add', compact('model'));
     }
 
     /**
@@ -37,28 +37,23 @@ class TahunController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
 
-
-        $model = new Tahun();
-        $model->tahun = $request->tahun;
-        $model->status = $request->status;
+        $model = new Mapel();
+        $model->kode_mapel = $request->kode_mapel;
+        $model->mapel = $request->mapel;
 
         $model->save();
 
-
-
-        return redirect()->route('tahun.index')->with('success', 'Tahun Ajaran Berhasil di Ditambahkan');
+        return redirect()->route('mapel.index')->with('success', 'Mata Pelajaran Berhasil di Ditambahkan');
     }
-
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tahun  $Tahun
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($Tahun)
+    public function show($id)
     {
         //
     }
@@ -66,45 +61,45 @@ class TahunController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tahun  $Tahun
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $model =  Tahun::find($id);
-        // dd($model);
-        return view('tahun.edit', compact('model'));
+        $model =  Mapel::find($id);
+        return view('mapel.edit', compact('model'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tahun  $Tahun
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $id_tahun)
+    public function update(Request $request, $id)
     {
-        // $model =  Tahun::find($id_tahun);
-        // $model->tahun = $request->tahun;
-        // $model->status = $request->status;
+        $model =  Mapel::find($id);
+        $model->kode_mapel = $request->kode_mapel;
+        $model->mapel = $request->mapel;
 
-        // $model->update();
+        $model->update();
 
-        // return redirect()->route('tahun.index')->with('success', 'Tahun Ajaran Berhasil di Ubah');
-        return $request;
+
+        return redirect()->route('mapel.index')->with('success', 'Data Berhasil di Update');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tahun  $Tahun
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $model =  Tahun::find($id);
+        $model =  Mapel::find($id);
         $model->delete();
-        return redirect()->route('tahun.index')->with('success', 'Data Tahun Berhasil di Dihapus');
+
+        return redirect()->route('mapel.index')->with('success', 'Data Berhasil di Hapus');
     }
 }

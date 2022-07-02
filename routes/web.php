@@ -7,6 +7,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TendikController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\TahunController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,14 +62,14 @@ Route::put('/updateSiswa', [SiswaController::class, 'update']);
 Route::resource('tendik', TendikController::class);;
 Route::get('/addTendik', [TendikController::class, 'create']);
 Route::put('/postTendik', [TendikController::class, 'store']);
-Route::put('/postUpdateTendik', [TendikController::class, 'update']);
+Route::put('/updateTendik', [TendikController::class, 'update']);
 Route::get('/editTendik', [TendikController::class, 'edit']);
 
 //tahun ajaran
 Route::resource('tahun', TahunController::class);
 Route::get('/addtahun', [TahunController::class, 'create']);
 Route::put('/postTahun', [TahunController::class, 'store']);
-Route::put('/postUpTahun', [TahunController::class, 'update']);
+Route::put('/updateT', [TahunController::class, 'update']);
 Route::get('/editTahun', [TahunController::class, 'edit']);
 
 
@@ -85,3 +86,10 @@ Route::get('/addAdmin', [UserController::class, 'create']);
 Route::put('/postAdmin', [UserController::class, 'store']);
 Route::put('/postUpdateAdmin', [UserController::class, 'update']);
 Route::get('/editAdmin', [UserController::class, 'edit']);
+
+//mapel
+Route::resource('mapel', MapelController::class);
+Route::get('/addMapel', [MapelController::class, 'create']);
+Route::put('/postMapel', [MapelController::class, 'store']);
+Route::put('/postUpdateMapel', [MapelController::class, 'update']);
+Route::get('/editMapel', [MapelController::class, 'edit']);
