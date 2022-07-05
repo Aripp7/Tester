@@ -8,6 +8,10 @@ use PHPUnit\Framework\Test;
 
 class TendikController extends Controller
 {
+    public function __construct()
+    {
+        $this->TendikModel = new Tendik();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -68,6 +72,10 @@ class TendikController extends Controller
      */
     public function show($id)
     {
+        $model = [
+            'tendik' => $this->TendikModel->detailData($id),
+        ];
+        return view('tendik.show', $model);
     }
 
     /**

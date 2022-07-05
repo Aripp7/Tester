@@ -14,7 +14,7 @@ class SiswaController extends Controller
 
     public function __construct()
     {
-        $this->Siswa = new Siswa();
+        $this->SiswaModel = new Siswa();
     }
     /**
      * Display a listing of the resource.
@@ -86,8 +86,10 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        // $model =  Siswa::find($id);
-        // return view('siswa.show', compact('model'));
+        $model = [
+            'siswa' => $this->SiswaModel->detailData($id),
+        ];
+        return view('siswa.show', $model);
     }
 
     /**

@@ -44,6 +44,8 @@ Route::get('/editGuru', [GuruController::class, 'edit']);
 Route::put('/postGuru', [GuruController::class, 'store']);
 Route::put('/postUpdateGuru', [GuruController::class, 'update']);
 
+
+
 //Login
 Route::get('/adminLogin', [LoginController::class, 'halamanLogin'])->middleware('guest')->name('login');
 Route::post('/postLogin', [LoginController::class, 'postLogin']);
@@ -81,11 +83,12 @@ Route::put('/postUpdateKelas', [KelasController::class, 'update']);
 Route::get('/editKelas', [KelasController::class, 'edit']);
 
 //user admin
-Route::resource('admin', UserController::class);
-Route::get('/addAdmin', [UserController::class, 'create']);
-Route::put('/postAdmin', [UserController::class, 'store']);
-Route::put('/postUpdateAdmin', [UserController::class, 'update']);
-Route::get('/editAdmin', [UserController::class, 'edit']);
+Route::resource('user', UserController::class);
+Route::get('/addUser', [UserController::class, 'create']);
+Route::put('/postUser', [UserController::class, 'store']);
+Route::put('/postUser', [UserController::class, 'update']);
+Route::get('/edituser', [UserController::class, 'edit']);
+Route::get('/show/{$id}', [UserController::class, 'edit']);
 
 //mapel
 Route::resource('mapel', MapelController::class);

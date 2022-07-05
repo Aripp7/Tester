@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->UserModel = new User();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +64,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = [
+            'user' => $this->UserModel->detailData($id),
+        ];
+        return view('user.show', $model);
     }
 
     /**

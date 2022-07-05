@@ -17,4 +17,9 @@ class Siswa extends Model
             ->leftJoin('kelas', 'kelas.id', '=', 'siswa.id')
             ->get();
     }
+
+    public function detailData($id)
+    {
+        return DB::table('siswa')->where('id', $id)->first();
+    }
 }

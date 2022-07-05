@@ -131,10 +131,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin" class="nav-link">
+                    <a href="/user" class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>
-                            Admin
+                            User
                         </p>
                     </a>
                 </li>
