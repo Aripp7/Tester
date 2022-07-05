@@ -93,6 +93,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    <a href="/siswa" type="submit" class="btn btn-danger btn-block">Batal</a>
                 </div>
             </div>
 

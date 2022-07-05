@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Mapel;
 use Illuminate\Http\Request;
 
-
-class UserController extends Controller
+class MapelController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->UserModel = new User();
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $datas = User::all();
-        return view('User.index', compact('datas'));
+        $datas = Mapel::all();
+        return view('mapel.index', compact('datas'));
     }
 
     /**
@@ -32,8 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $model = new User();
-        return view('User.add', compact('model'));
+        $model = new Mapel();
+        return view('mapel.add', compact('model'));
     }
 
     /**
@@ -44,16 +37,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new User;
-        $model->nama = $request->nama;
-        $model->username = $request->username;
-        $model->email = $request->email;
-        $model->password = $request->password;
+
+        $model = new Mapel();
+        $model->kode_mapel = $request->kode_mapel;
+        $model->mapel = $request->mapel;
+
         $model->save();
 
-
-
-        return redirect('User');
+        return redirect()->route('mapel.index')->with('success', 'Mata Pelajaran Berhasil di Ditambahkan');
     }
 
     /**
@@ -64,10 +55,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $model = [
-            'user' => $this->UserModel->detailData($id),
-        ];
-        return view('user.show', $model);
+        //
     }
 
     /**
@@ -78,8 +66,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $model =  User::find($id);
-        return view('pegawai.edit', compact('model'));
+        $model =  Mapel::find($id);
+        return view('mapel.edit', compact('model'));
     }
 
     /**
@@ -91,16 +79,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model =  User::find($id);
-        $model->nama = $request->nama;
-        $model->username = $request->username;
-        $model->email = $request->email;
-        $model->password = $request->password;
+        $model =  Mapel::find($id);
+        $model->kode_mapel = $request->kode_mapel;
+        $model->mapel = $request->mapel;
+
         $model->update();
 
 
-
-        return redirect('User');
+        return redirect()->route('mapel.index')->with('success', 'Data Berhasil di Update');
     }
 
     /**
@@ -111,8 +97,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $model =  User::find($id);
+        $model =  Mapel::find($id);
         $model->delete();
-        return redirect('User');
+
+        return redirect()->route('mapel.index')->with('success', 'Data Berhasil di Hapus');
     }
 }

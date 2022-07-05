@@ -39,10 +39,6 @@ class TahunController extends Controller
     {
         // return $request;
 
-        $request->validate([
-            'tahun' => 'required',
-            'status' => 'required',
-        ]);
 
         $model = new Tahun();
         $model->tahun = $request->tahun;
@@ -87,15 +83,16 @@ class TahunController extends Controller
      * @param  \App\Models\Tahun  $Tahun
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $id)
+    public function update(Request $request,  $id_tahun)
     {
-        $model =  Tahun::find($id);
-        $model->tahun = $request->tahun;
-        $model->status = $request->status;
+        // $model =  Tahun::find($id_tahun);
+        // $model->tahun = $request->tahun;
+        // $model->status = $request->status;
 
-        $model->update();
+        // $model->update();
 
-        return redirect()->route('tahun.index')->with('success', 'Tahun Ajaran Berhasil di Ubah');
+        // return redirect()->route('tahun.index')->with('success', 'Tahun Ajaran Berhasil di Ubah');
+        return $request;
     }
 
     /**

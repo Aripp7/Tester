@@ -1,17 +1,17 @@
-@extends('layout.main',['title' => 'Detail Siswa '] )
+@extends('layout.main',['title' => 'Detail Guru '] )
 
 @section('content-header')
 
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Detail Siswa</h1>
+            <h1>Detail guru</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                <li class="breadcrumb-item "><a href="/siswa">Siswa</a></li>
-                <li class="breadcrumb-item active">Detail Siswa</li>
+                <li class="breadcrumb-item "><a href="/guru">Guru</a></li>
+                <li class="breadcrumb-item active">Detail Guru</li>
             </ol>
         </div>
     </div>
@@ -31,44 +31,55 @@
                                 <tbody>
                                     <tr>
                                         <th>Nama</th>
-                                        <td style="text-transform:none;">{{$siswa->nama}}</td>
+                                        <td style="text-transform:none;">{{$guru->nama}}</td>
 
                                     </tr>
                                     <tr>
-                                        <th>NISN</th>
-                                        <td>{{$siswa->nisn}}</td>
+                                        <th>NIP</th>
+                                        <td>{{$guru->nip}}</td>
                                     </tr>
                                     <tr>
                                         <th>Tempat Lahir</th>
-                                        <td>{{$siswa->tempat_lahir}}</td>
+                                        <td>{{$guru->tempat_lahir}}</td>
                                     </tr>
                                     <tr>
                                         <th>Tanggal Lahir</th>
-                                        <td>{{$siswa->tgl_lahir}} </td>
+                                        <td>{{$guru->tgl_lahir}} </td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>{{$siswa->Jenis_kelamin}}</td>
+                                        <td>{{$guru->Jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <th>Agama</th>
-                                        <td>{{$siswa->agama}}</td>
+                                        <td>{{$guru->agama}}</td>
                                     </tr>
                                     <tr>
                                         <th>Alamat Asal</th>
-                                        <td colspan="2">{{$siswa->alamat}}</td>
+                                        <td colspan="2">{{$guru->alamat_jalan}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Nama Ayah</th>
-                                        <td colspan="2">{{$siswa->nama_ayah}}</td>
+                                        <th>RW</th>
+                                        <td colspan="2">{{$guru->rw}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Nama Ibu</th>
-                                        <td colspan="2">{{$siswa->nama_ibu}}</td>
+                                        <th>RT</th>
+                                        <td colspan="2">{{$guru->rt}}</td>
                                     </tr>
+
                                     <tr>
-                                        <th>Kelas</th>
-                                        <td colspan="2">{{$siswa->kelas}}</td>
+                                        <th>Kecamatan</th>
+                                        <td colspan="2">{{$guru->kecamatan}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Desa Kelurahan</th>
+                                        <td colspan="2">{{$guru->desa_kelurahan}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Pangkat</th>
+                                        <td colspan="2">{{$guru->pangkat_golongan}}</td>
                                     </tr>
 
                                 </tbody>
@@ -80,7 +91,7 @@
                         </tbody>
 
                     </div>
-                    <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
+                    <a href="{{ route('guru.edit', $guru->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
                 </div>
             </div>
         </div>

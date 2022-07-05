@@ -1,16 +1,16 @@
-@extends('layout.main',['title' => 'Data Tenaga Pendidik '] )
+@extends('layout.main',['title' => 'Data User '] )
 
 @section('content-header')
 
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Tenaga Pendidik</h1>
+            <h1>User</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Tendik</li>
+                <li class="breadcrumb-item active">User</li>
             </ol>
         </div>
 
@@ -49,12 +49,12 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr style="background-color: #0069d9; color: white; size: 8px">
-                                            <!-- <th>No </th> -->
-                                            <th>Nip </th>
-                                            <th>Nama</th>
+                                            <th>No </th>
+                                            <th>Nama </th>
+                                            <th>Username</th>
 
-                                            <th>Alamat</th>
-                                            <th>Pangkat</th>
+                                            <th>Email</th>
+
                                             <th>Aksi</th>
 
                                         </tr>
@@ -66,28 +66,20 @@
                                         @foreach($datas as $key=>$values)
                                         <?php $no++; ?>
                                         <tr>
-                                            <!-- <td>{{ $no }}</td> -->
-
-                                            <td>{{ $values->nip }}</td>
+                                            <td>{{ $no }}</td>
                                             <td>{{ $values->nama }}</td>
-
-
-                                            <td>{{ $values->alamat_jalan }}</td>
-                                            <td>{{ $values->pangkat_golongan }}</td>
-
+                                            <td>{{ $values->username }}</td>
+                                            <td>{{ $values->email }}</td>
                                             <td>
-                                                <form action="{{ route('tendik.destroy', $values->id) }}" method="post">
+                                                <form action="{{ route('user.destroy', $values->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('tendik.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                    <a href="{{ route('tendik.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
-
-                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('tendik',$values->id)}}"> <span class="fas fa-trash"></span>
-
+                                                    <a href="{{ route('user.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                    <a href="{{ route('user.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
+                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('user',$values->id)}}"> <span class="fas fa-trash"></span>
                                                     </button>
                                                 </form>
                                             </td>
-
                                         </tr>
                                         @endforeach
                                     </tbody>

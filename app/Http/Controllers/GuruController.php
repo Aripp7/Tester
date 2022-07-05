@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
+    public function __construct()
+    {
+        $this->GuruModel = new Guru();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -68,6 +73,10 @@ class GuruController extends Controller
      */
     public function show($id)
     {
+        $model = [
+            'guru' => $this->GuruModel->detailData($id),
+        ];
+        return view('guru.show', $model);
     }
 
     /**

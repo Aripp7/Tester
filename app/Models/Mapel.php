@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Tendik extends Model
+class Mapel extends Model
 {
-    protected $table = "tendik";
+    protected $table = "mapel";
     public $timestamps = false;
 
     public function detailData($id)
     {
-        return DB::table('tendik')->where('id', $id)->first();
+        return DB::table('mapel')->where('id', $id)->first();
     }
 }
