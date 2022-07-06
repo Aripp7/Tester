@@ -16,11 +16,10 @@
         </div>
     </div>
 </div>
-<!-- Main content -->
 
+<!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -32,7 +31,6 @@
                                     <tr>
                                         <th>Nama</th>
                                         <td style="text-transform:none;">{{$guru->nama}}</td>
-
                                     </tr>
                                     <tr>
                                         <th>NIP</th>
@@ -81,22 +79,15 @@
                                         <th>Pangkat</th>
                                         <td colspan="2">{{$guru->pangkat_golongan}}</td>
                                     </tr>
-
                                 </tbody>
-
                             </table>
-
-
-
                         </tbody>
-
                     </div>
                     <a href="{{ route('guru.edit', $guru->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
                 </div>
             </div>
         </div>
     </div>
-
 </section>
 
 @endsection
