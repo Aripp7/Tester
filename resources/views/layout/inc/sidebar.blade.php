@@ -123,10 +123,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/spp" class="nav-link">
+                    <a href="/surat" class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>
-                            SPP
+                            Surat
                         </p>
                     </a>
                 </li>

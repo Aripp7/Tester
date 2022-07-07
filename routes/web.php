@@ -8,6 +8,7 @@ use App\Http\Controllers\TendikController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
+use App\Http\Controllers\SuratController;
 use App\Http\Controllers\TahunController;
 use Illuminate\Support\Facades\Route;
 
@@ -96,3 +97,11 @@ Route::get('/addMapel', [MapelController::class, 'create']);
 Route::put('/postMapel', [MapelController::class, 'store']);
 Route::put('/postUpdateMapel', [MapelController::class, 'update']);
 Route::get('/editMapel', [MapelController::class, 'edit']);
+
+//surat
+Route::resource('surat', SuratController::class);
+Route::get('/surat', [SuratController::class, 'index']);
+Route::get('/addSurat', [SuratController::class, 'create']);
+Route::put('/postSurat', [SuratController::class, 'store']);
+Route::put('/postUpdateSurat', [SuratController::class, 'update']);
+Route::get('/editSurat', [SuratController::class, 'edit']);
