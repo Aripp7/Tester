@@ -47,6 +47,12 @@
                                     Tambah Data
                                 </a>
                             </ol>
+                            <ol class="breadcrumb float-sm-right">
+                                <a href="cetakSiswa" class="btn btn-primary" style="margin-left: 10px;">
+                                    <i class="fa fa-print"></i>
+                                    Cetak Laporan
+                                </a>
+                            </ol>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

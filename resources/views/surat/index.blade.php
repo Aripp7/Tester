@@ -14,6 +14,38 @@
             </ol>
         </div>
 
+        <body class="hold-transition sidebar-mini">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <form action="cetakLaporanSurat">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="nama">Pilih Tanggal:</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" style="width: 30%;" id="nama" name="tgl_surat">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="Jenis_kelamin">Jenis Surat:</label>
+                                    <select class="form-control select2" name="Jenis_kelamin" style="width: 20%; margin-left: 8px;">
+                                        <option selected="selected">-- Pilih --</option>
+                                        <option value="keluar">Surat Keluar</option>
+                                        <option value="masuk">Surat Masuk</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <ol class="breadcrumb float-sm-right">
+                                <a href="cetakSurat" class="btn btn-primary" style="margin: 10px 10px">
+                                    <i class="fa fa-print"></i>
+                                    Cetak Laporan
+                                </a>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
     </div>
     <!-- /.container-fluid -->
 
