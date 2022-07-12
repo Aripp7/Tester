@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Kelas extends Migration
+class JadwalPelajaran extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class Kelas extends Migration
      */
     public function up()
     {
-        Schema::create('kelas', function (Blueprint $table) {
+        Schema::create('jadwal_pelajaran', function (Blueprint $table) {
+            $table->integer('id_jadwal');
             $table->integer('id_kelas');
-            $table->string('nama_kelas', 50);
+            $table->integer('id_mapel');
+            $table->integer('id_guru');
+            $table->integer('id_tahun');
+            $table->string('hari', 50);
         });
     }
 
@@ -26,6 +30,6 @@ class Kelas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kelas');
+        Schema::dropIfExists('jadwal_pelajaran');
     }
 }

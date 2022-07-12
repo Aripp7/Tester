@@ -14,7 +14,7 @@ class Tendik extends Migration
     public function up()
     {
         Schema::create('tendik', function (Blueprint $table) {
-            $table->integer('id');
+            $table->integer('id_tendik');
             $table->string('nama', 100);
             $table->string('Jenis_kelamin', 50);
             $table->string('tempat_lahir', 50);

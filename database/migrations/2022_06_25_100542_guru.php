@@ -14,7 +14,7 @@ class Guru extends Migration
     public function up()
     {
         Schema::create('guru', function (Blueprint $table) {
-            $table->integer('id');
+            $table->integer('id_guru');
             $table->string('nama', 100);
             $table->string('Jenis_kelamin', 50);
             $table->string('tempat_lahir', 50);
