@@ -70,9 +70,6 @@
                                         <td>{{ $values->nip }}</td>
                                         <td>{{ $values->nama }}</td>
                                         <td>{{ $values->alamat_jalan }}</td>
-
-
-
                                         <td>
                                             <form action="{{ route('guru.destroy', $values->id) }}" method="post">
                                                 @csrf
