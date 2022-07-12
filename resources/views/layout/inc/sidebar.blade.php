@@ -104,16 +104,16 @@
                     </a>
 
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="/ujian" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
                             Jadwal Ujian
-                            <!-- <i class="fas fa-angle-left right"></i> -->
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
 
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="/absen" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
