@@ -27,6 +27,6 @@ class Mapel extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kelas');
+        Schema::dropIfExists('mapel');
     }
 }
