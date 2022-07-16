@@ -99,7 +99,7 @@ class TendikController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = new Tendik();
+        $model = Tendik::find($id);
         $model->nama = $request->nama;
         $model->Jenis_kelamin = $request->Jenis_kelamin;
         $model->tgl_lahir = $request->tgl_lahir;

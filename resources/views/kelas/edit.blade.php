@@ -12,7 +12,7 @@
 <!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="col-md-9">
-        <form class="col-md-9" action="postKelas" method="POST">
+        <form class="col-md-9" action="{{url ('kelasUpdate/'.$model->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('put') }}
             <div class="form-group" style="width: 50%">
@@ -23,7 +23,7 @@
 
 
 
-            <button type="submit" class="btn btn-primary">Tambahkan</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
             <a href="/kelas" class="btn btn-danger">Batal</a>
         </form>
 

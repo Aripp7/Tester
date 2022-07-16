@@ -12,7 +12,7 @@
 <!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="col-md-9">
-        <form class="col-md-9" action="updateT" method="POST">
+        <form class="col-md-9" action="{{url ('tendikUpdate/'.$model->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('put') }}
             <div class="form-group" style="width: 50%">

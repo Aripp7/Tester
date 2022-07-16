@@ -19,7 +19,7 @@
 <!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="col">
-        <form class="form-horizontal" action="postGuru" method="POST">
+        <form class="form-horizontal" action="{{url ('guruUpdate/'.$model->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('put')}}
             <div class="form-group">

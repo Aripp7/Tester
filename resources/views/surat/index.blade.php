@@ -70,7 +70,7 @@
                             @endif
                             <div class="card-header">
                                 <ol class="breadcrumb float-sm-left">
-                                    <a href="addsurat" class="btn btn-primary">
+                                    <a href="addSurat" class="btn btn-primary">
                                         <i class="fa fa-plus"></i>
                                         Tambah Data
                                     </a>

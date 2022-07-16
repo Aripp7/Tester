@@ -88,7 +88,7 @@ class KelasController extends Controller
 
 
 
-        return redirect('kelas');
+        return redirect('kelas')->with('success', 'Data Berhasil di Diubah');
     }
 
     /**

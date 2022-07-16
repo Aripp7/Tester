@@ -102,8 +102,16 @@ class GuruController extends Controller
     {
         $model =  Guru::find($id);
         $model->nama = $request->nama;
-        $model->alamat = $request->alamat;
-        $model->nohp = $request->nohp;
+        $model->Jenis_kelamin = $request->Jenis_kelamin;
+        $model->tgl_lahir = $request->tgl_lahir;
+        $model->tempat_lahir = $request->tempat_lahir;
+        $model->nip = $request->nip;
+        $model->alamat_jalan = $request->alamat_jalan;
+        $model->agama = $request->agama;
+        $model->nama_dusun = $request->nama_dusun;
+        $model->kecamatan = $request->kecamatan;
+        $model->desa_kelurahan = $request->desa_kelurahan;
+        $model->pangkat_golongan = $request->pangkat_golongan;
         $model->update();
 
 

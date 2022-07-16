@@ -113,22 +113,23 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request;
 
         $model =  Siswa::find($id);
-        $model->nisn = $request->nisn;
         $model->nama = $request->nama;
-        $model->jenis_kelamin = $request->jenis_kelamin;
+        $model->nisn = $request->nisn;
+        $model->Jenis_kelamin = $request->Jenis_kelamin;
         $model->tgl_lahir = $request->tgl_lahir;
         $model->tempat_lahir = $request->tempat_lahir;
         $model->agama = $request->agama;
+        $model->alamat = $request->alamat;
         $model->nama_ayah = $request->nama_ayah;
         $model->nama_ibu = $request->nama_ibu;
-        $model->alamat = $request->alamat;
         $model->kelas = $request->kelas;
         $model->update();
 
 
-        return redirect()->route('siswa.index')->with('succes', 'Data Berhasil di Update');
+        return redirect()->route('siswa.index')->with('success', 'Data Berhasil di Update');
     }
 
     /**
