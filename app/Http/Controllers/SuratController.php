@@ -37,7 +37,23 @@ class SuratController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file_surat = $request->file('file_surat');
+        $name = 'Surat_' . date('Ymdhis') . '.' . $request->file('file_surat')->getClientOriginalExtension();
+        $file_surat->move('dokumen/', $name);
+
+
+        $model = new Surat;
+        $model->jenis_surat = $request->jenis_surat;
+        $model->nomor_surat = $request->nomor_surat;
+        $model->tgl_surat = $request->tgl_surat;
+        $model->tujuan = $request->tujuan;
+        $model->keterangan = $request->keterangan;
+        $model->file_surat = $name;
+        $model->save();
+
+
+
+        return redirect('surat')->with('success', 'Surat Berhasil di Ditambahkan');
     }
 
     /**
@@ -84,6 +100,7 @@ class SuratController extends Controller
     {
         $model =  Surat::find($id);
         $model->delete();
-        return redirect()->route('surat.index')->with('success', 'Data Surat Berhasil di Dihapus');
+
+        return redirect()->route('surat.index')->with('success', 'Data Berhasil di Dihapus');
     }
 }

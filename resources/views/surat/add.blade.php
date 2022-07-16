@@ -10,7 +10,7 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                <li class="breadcrumb-item "><a href="/siswa">Surat</a></li>
+                <li class="breadcrumb-item "><a href="/surat">Surat</a></li>
                 <li class="breadcrumb-item active">Tambah Surat</li>
             </ol>
         </div>
@@ -19,12 +19,10 @@
 <!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="col">
-        <form class="form-horizontal" action="postSurat" method="POST">
+
+        <form class="form-horizontal" action="postSurat" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             {{ method_field('put')}}
-
-
-
             <div class="form-group">
                 <label class="control-label col-sm-2" for="jenis_surat">Jenis Surat:</label>
                 <select class="form-control select2" name="jenis_surat" style="width: 50%; margin-left: 8px;">
@@ -62,7 +60,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="file_surat ">File Surat:</label>
                 <div class="col-sm-10">
-                    <input type="file" class="form-control" id="file_surat " name="file_surat " placeholder="Alamat"></input>
+                    <input type="file" class="form-control" id="file_surat " name="file_surat"></input>
                 </div>
             </div>
 

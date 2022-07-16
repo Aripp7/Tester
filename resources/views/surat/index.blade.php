@@ -14,7 +14,7 @@
             </ol>
         </div>
 
-        <body class="hold-transition sidebar-mini">
+        <!-- <body class="hold-transition sidebar-mini">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-        </body>
+        </body> -->
     </div>
     <!-- /.container-fluid -->
 
@@ -81,36 +81,38 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr style="background-color: #0069d9; color: white; size: 8px">
-                                            <!-- <th>No </th> -->
                                             <th>No </th>
+
                                             <th>Tanggal Surat</th>
                                             <th>Jenis</th>
                                             <th>Dari/Tujuan</th>
                                             <th>Keterangan</th>
+                                            <th>File</th>
                                             <th>Aksi</th>
 
                                         </tr>
                                     </thead>
-
                                     <?php $no = 0; ?>
                                     <tbody>
                                         @foreach($datas as $key=>$values)
                                         <?php $no++; ?>
                                         <tr>
-                                            <td>{{ $no }}</td>
+                                            <td>{{ $no}}</td>
                                             <td>{{ $values->tgl_surat }}</td>
                                             <td>{{ $values->jenis_surat }}</td>
                                             <td>{{ $values->tujuan }}</td>
                                             <td>{{ $values->keterangan }}</td>
+                                            <td align="center">
+                                                <a href="dokumen/{{$values->file_surat}}" class="btn btn-success btn-xs shadow"> <span class="fas fa-download"></span></a>
+                                            </td>
 
-                                            <td>
-                                                <form action="{{ route('surat.destroy', $values->id) }}" method="post">
+                                            <td align="center">
+                                                <form action="{{ route('surat.destroy', $values->id) }}" method=" post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <a href="{{ route('surat.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                    <a href="{{ route('surat.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
-
-                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('surat',$values->id)}}"> <span class="fas fa-trash"></span>
+                                                    <!-- <a href="{{ route('surat.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a> -->
+                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama_surat }} ? ');" action="{{url('surat',$values->id)}}"> <span class="fas fa-trash"></span>
 
                                                     </button>
                                                 </form>
