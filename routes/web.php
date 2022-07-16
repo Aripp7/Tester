@@ -72,7 +72,7 @@ Route::get('/editTendik', [TendikController::class, 'edit']);
 Route::resource('tahun', TahunController::class);
 Route::get('/addtahun', [TahunController::class, 'create']);
 Route::put('/postTahun', [TahunController::class, 'store']);
-Route::put('tahunUpdate/{id}', 'App\Http\Controllers\TahunController@update');
+Route::put('tahunUpdate/{id_tahun}', 'App\Http\Controllers\TahunController@update');
 Route::get('/editTahun', [TahunController::class, 'edit']);
 
 

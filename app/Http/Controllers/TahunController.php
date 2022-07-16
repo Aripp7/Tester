@@ -85,14 +85,14 @@ class TahunController extends Controller
      */
     public function update(Request $request,  $id_tahun)
     {
-        // $model =  Tahun::find($id_tahun);
-        // $model->tahun = $request->tahun;
-        // $model->status = $request->status;
+        $model =  Tahun::find($id_tahun);
+        $model->tahun = $request->tahun;
+        $model->status = $request->status;
 
-        // $model->update();
+        $model->update();
 
-        // return redirect()->route('tahun.index')->with('success', 'Tahun Ajaran Berhasil di Ubah');
-        return $request;
+        return redirect()->route('tahun.index')->with('success', 'Tahun Ajaran Berhasil di Ubah');
+        // return $request;
     }
 
     /**
