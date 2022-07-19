@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Siswa;
 
 use App\Models\Kelas;
@@ -23,13 +23,15 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        // $datas = [
-        //     'datas' => $this->Siswa->allData(),
-        // ];
-        $datas = Siswa::all();
+
+        // $datas = Siswa::all();
 
 
-        return view('siswa.index', compact('datas'));
+        // return view('siswa.index', compact('datas'));
+
+        $datas = DB::table('siswa')->get();
+
+        return view('siswa.index', ['siswa' => $datas]);
     }
 
 

@@ -82,18 +82,16 @@
                                     <thead>
                                         <tr style="background-color: #0069d9; color: white; size: 8px">
                                             <th>No </th>
-
                                             <th>Tanggal Surat</th>
                                             <th>Jenis</th>
                                             <th>Dari/Tujuan</th>
                                             <th>Keterangan</th>
                                             <th>File</th>
                                             <th>Aksi</th>
-
                                         </tr>
                                     </thead>
                                     <?php $no = 0; ?>
-                                    <tbody>
+                                    <tbody>,
                                         @foreach($datas as $key=>$values)
                                         <?php $no++; ?>
                                         <tr>
@@ -135,14 +133,14 @@
         </section>
         <!-- /.content -->
 </div>
-< </body>
+</body>
 
-    <script>
-        window.setTimeout(function() {
-            $(".alert").fadeTo(300, 0).slideUp(300, function() {
-                $(this).remove();
-            });
-        }, 5000);
-    </script>
-    @endsection
-    @section('content')
+<script>
+    window.setTimeout(function() {
+        $(".alert").fadeTo(300, 0).slideUp(300, function() {
+            $(this).remove();
+        });
+    }, 5000);
+</script>
+@endsection
+@section('content')
