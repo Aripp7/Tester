@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Siswa;
 
 use App\Models\Kelas;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -24,14 +25,14 @@ class SiswaController extends Controller
     public function index()
     {
 
-        // $datas = Siswa::all();
+        $datas = Siswa::all();
 
 
-        // return view('siswa.index', compact('datas'));
+        return view('siswa.index', compact('datas'));
 
-        $datas = DB::table('siswa')->get();
+        // $datas = DB::table('siswa')->get();
 
-        return view('siswa.index', ['siswa' => $datas]);
+        // return view('siswa.index', ['siswa' => $datas]);
     }
 
 
@@ -71,7 +72,7 @@ class SiswaController extends Controller
 
 
         $model->save();
-
+        // return response()->json($model);
 
 
         return redirect()->route('siswa.index')->with('success', 'Data Berhasil di Input');

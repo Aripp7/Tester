@@ -7,6 +7,7 @@ use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Tendik;
+use Illuminate\Support\Facades\DB;
 
 
 class DashboardController extends Controller
@@ -57,12 +58,12 @@ class DashboardController extends Controller
 
         return $result;
     }
-    // public function searchItem(Request $request)
-    // {
-    //     $data = DB::table('tbl_orders_detail')
-    //         ->select(DB::raw("CONCAT(item_name,' Kondisi ',item_condition) as item"))->get();
+    public function searchItem(Request $request)
+    {
+        $data = DB::table('tbl_orders_detail')
+            ->select(DB::raw("CONCAT(item_name,' Kondisi ',item_condition) as item"))->get();
 
-    //     $value = $this->SearchString($data, $request->item);
-    //     // dd($value);
-    // }
+        $value = $this->SearchString($data, $request->item);
+        // dd($value);
+    }
 }
