@@ -24,14 +24,16 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="form-group" style="width: 50%">
-            <label for="cari">Pencarian Data dengan Algorima Boyer-Moore</label>
-            <input class="form-control" id="cari" aria-describedby="cari" required placeholder="Masukkan Kata/Kalimat"></input>
-        </div>
-        <button type="submit" class="btn btn-primary">Mulai Pencarian</button>
-        <div style="margin-top: 10px;">
-            <label for="">Kecepatan Pencarian : -</label>
-        </div>
+        <form action="searchItem">
+            <div class="form-group" style="width: 50%">
+                <label for="cari">Pencarian Data dengan Algorima Boyer-Moore</label>
+                <input class="form-control" id="cari" aria-describedby="cari" required placeholder="Masukkan Kata/Kalimat"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Mulai Pencarian</button>
+            <div style="margin-top: 10px;">
+                <label for="">Kecepatan Pencarian : -</label>
+            </div>
+        </form>
     </div>
 </div>
 <section class="content">
