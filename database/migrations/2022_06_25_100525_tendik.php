@@ -19,7 +19,7 @@ class Tendik extends Migration
             $table->string('Jenis_kelamin', 50);
             $table->string('tempat_lahir', 50);
             $table->date('tgl_lahir');
-            $table->bigInteger('nip', 20);
+            $table->string('nip', 20);
             $table->string('agama', 50);
             $table->string('alamat_jalan', 50);
             $table->string('kecamatan', 50);
