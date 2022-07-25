@@ -64,10 +64,10 @@
                                             <td>{{ $values->mapel }}</td>
 
                                             <td>
-                                                <form action="{{ route('mapel.destroy', $values->id) }}" method="post">
+                                                <form action="{{ route('mapel.destroy', $values->id_mapel) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('mapel.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                    <a href="{{ route('mapel.edit', $values->id_mapel) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
 
                                                     <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('siswa',$values->id)}}"> <span class="fas fa-trash"></span>
 

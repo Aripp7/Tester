@@ -14,7 +14,7 @@ class JadwalPelajaran extends Migration
     public function up()
     {
         Schema::create('jadwal_pelajaran', function (Blueprint $table) {
-            $table->integer('id_jadwal');
+            $table->id('id_jadwal');
             $table->integer('id_kelas');
             $table->integer('id_mapel');
             $table->integer('id_guru');

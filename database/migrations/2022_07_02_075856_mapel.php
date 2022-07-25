@@ -14,7 +14,7 @@ class Mapel extends Migration
     public function up()
     {
         Schema::create('mapel', function (Blueprint $table) {
-            $table->integer('id_mapel');
+            $table->id('id_mapel');
             $table->string('kode_mapel', 50);
             $table->string('mapel', 50);
         });

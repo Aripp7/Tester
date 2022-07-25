@@ -93,17 +93,17 @@
                     </a>
 
                 </li>
-
+                <!-- 
                 <li class="nav-item">
                     <a href="/jadwal" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Jadwal Pelajaran
-                            <!-- <i class="fas fa-angle-left right"></i> -->
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
 
-                </li>
+                </li> -->
                 <!-- <li class="nav-item">
                     <a href="/ujian" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -114,14 +114,14 @@
                     </a>
 
                 </li> -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="/absen" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Absensi
                         </p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="/surat" class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>

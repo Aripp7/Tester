@@ -19,13 +19,13 @@
 <!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="col">
-        <form class="form-horizontal" action="{{url ('guruUpdate/'.$model->id) }}" method="POST">
+        <form class="form-horizontal" action="{{url ('guruUpdate/'.$model->id_guru) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('put')}}
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nama">Nama:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" name="nama" value="{{$model->nama}}" placeholder="Masukkan Nama">
+                    <input type="text" class="form-control" id="nama" name="nama" value="{{$model->nama_guru}}" placeholder="Masukkan Nama">
                 </div>
             </div>
             <div class="form-group">

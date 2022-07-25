@@ -68,14 +68,14 @@
                                     @foreach($datas as $key=>$values)
                                     <tr>
                                         <td>{{ $values->nip }}</td>
-                                        <td>{{ $values->nama }}</td>
+                                        <td>{{ $values->nama_guru }}</td>
                                         <td>{{ $values->alamat_jalan }}</td>
                                         <td>
-                                            <form action="{{ route('guru.destroy', $values->id) }}" method="post">
+                                            <form action="{{ route('guru.destroy', $values->id_guru) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{ route('guru.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                <a href="{{ route('guru.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
+                                                <a href="{{ route('guru.edit', $values->id_guru) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                <a href="{{ route('guru.show', $values->id_guru) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
 
                                                 <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('guru',$values->id)}}"> <span class="fas fa-trash"></span>
 

@@ -72,14 +72,14 @@
                                     <?php $no++; ?>
                                     <tr>
                                         <td>{{ $values->nisn }}</td>
-                                        <td>{{ $values->nama }}</td>
+                                        <td>{{ $values->nama_siswa }}</td>
                                         <td>{{ $values->kelas }}</td>
                                         <td>
-                                            <form action="{{ route('siswa.destroy', $values->id) }}" method="post">
+                                            <form action="{{ route('siswa.destroy', $values->id_siswa) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{ route('siswa.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                <a href="{{ route('siswa.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
+                                                <a href="{{ route('siswa.edit', $values->id_siswa) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                <a href="{{ route('siswa.show', $values->id_siswa) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
 
                                                 <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('siswa',$values->id)}}"> <span class="fas fa-trash"></span>
 

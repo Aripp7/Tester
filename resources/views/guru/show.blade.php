@@ -30,7 +30,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Nama</th>
-                                        <td style="text-transform:none;">{{$guru->nama}}</td>
+                                        <td style="text-transform:none;">{{$guru->nama_guru}}</td>
                                     </tr>
                                     <tr>
                                         <th>NIP</th>
@@ -83,7 +83,7 @@
                             </table>
                         </tbody>
                     </div>
-                    <a href="{{ route('guru.edit', $guru->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
+                    <a href="{{ route('guru.edit', $guru->id_guru) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
                 </div>
             </div>
         </div>

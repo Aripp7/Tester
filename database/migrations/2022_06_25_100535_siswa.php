@@ -14,8 +14,8 @@ class Siswa extends Migration
     public function up()
     {
         Schema::create('siswa', function (Blueprint $table) {
-            $table->integer('id_siswa');
-            $table->string('nama', 100);
+            $table->id('id_siswa');
+            $table->string('nama_siswa', 100);
             $table->string('jenis_kelamin', 50);
             $table->string('nisn', 20);
             $table->string('tempat_lahir', 50);
@@ -25,7 +25,7 @@ class Siswa extends Migration
             $table->string('nama_ayah', 50);
             $table->string('nama_ibu', 50);
             $table->string('kelas', 50);
-            $table->integer('id_kelas', 50)->unique();
+            $table->string('id_kelas', 50);
         });
     }
 

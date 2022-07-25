@@ -31,7 +31,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Nama</th>
-                                        <td style="text-transform:none;">{{$tendik->nama}}</td>
+                                        <td style="text-transform:none;">{{$tendik->nama_tendik}}</td>
 
                                     </tr>
                                     <tr>
@@ -77,7 +77,7 @@
                         </tbody>
 
                     </div>
-                    <a href="{{ route('tendik.edit', $tendik->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
+                    <a href="{{ route('tendik.edit', $tendik->id_tendik) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
                 </div>
             </div>
         </div>

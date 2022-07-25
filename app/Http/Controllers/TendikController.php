@@ -100,14 +100,13 @@ class TendikController extends Controller
     public function update(Request $request, $id)
     {
         $model = Tendik::find($id);
-        $model->nama = $request->nama;
+        $model->nama_tendik = $request->nama_tendik;
         $model->Jenis_kelamin = $request->Jenis_kelamin;
         $model->tgl_lahir = $request->tgl_lahir;
         $model->tempat_lahir = $request->tempat_lahir;
         $model->nip = $request->nip;
         $model->alamat_jalan = $request->alamat_jalan;
         $model->agama = $request->agama;
-
         $model->kecamatan = $request->kecamatan;
 
         $model->pangkat_golongan = $request->pangkat_golongan;

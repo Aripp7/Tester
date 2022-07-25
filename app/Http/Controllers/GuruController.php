@@ -44,7 +44,7 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $model = new Guru();
-        $model->nama = $request->nama;
+        $model->nama_guru = $request->nama_guru;
         $model->Jenis_kelamin = $request->Jenis_kelamin;
         $model->tgl_lahir = $request->tgl_lahir;
         $model->tempat_lahir = $request->tempat_lahir;
@@ -101,7 +101,7 @@ class GuruController extends Controller
     public function update(Request $request, $id)
     {
         $model =  Guru::find($id);
-        $model->nama = $request->nama;
+        $model->nama_guru = $request->nama_guru;
         $model->Jenis_kelamin = $request->Jenis_kelamin;
         $model->tgl_lahir = $request->tgl_lahir;
         $model->tempat_lahir = $request->tempat_lahir;

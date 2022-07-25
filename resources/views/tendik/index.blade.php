@@ -76,18 +76,16 @@
                                             <!-- <td>{{ $no }}</td> -->
 
                                             <td>{{ $values->nip }}</td>
-                                            <td>{{ $values->nama }}</td>
-
-
+                                            <td>{{ $values->nama_tendik}}</td>
                                             <td>{{ $values->alamat_jalan }}</td>
                                             <td>{{ $values->pangkat_golongan }}</td>
 
                                             <td>
-                                                <form action="{{ route('tendik.destroy', $values->id) }}" method="post">
+                                                <form action="{{ route('tendik.destroy', $values->id_tendik) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('tendik.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                    <a href="{{ route('tendik.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
+                                                    <a href="{{ route('tendik.edit', $values->id_tendik) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                    <a href="{{ route('tendik.show', $values->id_tendik) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
 
                                                     <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('tendik',$values->id)}}"> <span class="fas fa-trash"></span>
 

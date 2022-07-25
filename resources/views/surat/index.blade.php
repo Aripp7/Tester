@@ -105,11 +105,11 @@
                                             </td>
 
                                             <td align="center">
-                                                <form action="{{ route('surat.destroy', $values->id) }}" method=" post">
+                                                <form action="{{ route('surat.destroy', $values->id_surat) }}" method=" post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('surat.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                    <!-- <a href="{{ route('surat.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a> -->
+                                                    <a href="{{ route('surat.edit', $values->id_surat) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                    <!-- <a href="{{ route('surat.show', $values->id_surat) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a> -->
                                                     <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama_surat }} ? ');" action="{{url('surat',$values->id)}}"> <span class="fas fa-trash"></span>
 
                                                     </button>

@@ -60,7 +60,7 @@ class SiswaController extends Controller
 
         $model = new Siswa();
         $model->nisn = $request->nisn;
-        $model->nama = $request->nama;
+        $model->nama_siswa = $request->nama_siswa;
         $model->tgl_lahir = $request->tgl_lahir;
         $model->tempat_lahir = $request->tempat_lahir;
         $model->agama = $request->agama;
@@ -87,10 +87,10 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_siswa)
     {
         $model = [
-            'siswa' => $this->SiswaModel->detailData($id),
+            'siswa' => $this->SiswaModel->detailData($id_siswa),
         ];
         return view('siswa.show', $model);
     }
@@ -101,9 +101,9 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_siswa)
     {
-        $model =  Siswa::find($id);
+        $model =  Siswa::find($id_siswa);
         return view('siswa.edit', compact('model'));
     }
 

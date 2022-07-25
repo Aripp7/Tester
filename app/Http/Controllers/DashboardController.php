@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Helper\BoyerMooyer;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Siswa;
@@ -12,58 +13,64 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+
+    private $searchList = [
+        'nama_siswa',
+        'nama_guru',
+        'nama_tendik',
+        'file_surat',
+        'keterangan',
+        'nomor_surat',
+        'alamat',
+        'alamat_jalan',
+        'pangkat_golongan',
+        'nip',
+        'nisn',
+        'tujuan',
+    ];
     public function index()
     {
+
         $siswa =  Siswa::count();
         $guru = Guru::count();
         $tendik = Tendik::count();
         $kelas = Kelas::count();
 
-        return view('dashboard', compact('siswa', 'guru', 'tendik', 'kelas'));
-    }
 
-    function badCharHeuristic($str, $size, &$badchar)
-    {
-        for ($i = 0; $i < 256; $i++)
-            $badchar[$i] = -1;
+        $search = request('search');
 
-        for ($i = 0; $i < $size; $i++)
-            $badchar[ord($str[$i])] = $i;
-    }
-    function SearchString($str, $pat)
-    {
-        $m = strlen($pat);
-        $n = strlen($str);
-        $i = 0;
 
-        $this->badCharHeuristic($pat, $m, $badchar);
+        $siswa1 = DB::table('siswa')
+            ->orderBy('id_siswa')
+            ->get();
+        $guru2 = DB::table('guru')
+            ->orderBy('id_guru')
+            ->get();
+        $surat = DB::table('surats')
+            ->orderBy('id_surat')
+            ->get();
+        $tendik1 = DB::table('tendik')
+            ->orderBy('id_tendik')
+            ->get();
+        $kelas1 = DB::table('kelas')
+            ->orderBy('id_kelas')
+            ->get();
+        $tahun = DB::table('tahun_ajaran')
+            ->orderBy('id_tahun')
+            ->get();
+        $mapel = DB::table('mapel')
+            ->orderBy('id_mapel')
+            ->get();
 
-        $s = 0;
-        while ($s <= ($n - $m)) {
-            $j = $m - 1;
 
-            while ($j >= 0 && $pat[$j] == $str[$s + $j])
-                $j--;
-
-            if ($j < 0) {
-                $arr[$i++] = $s;
-                $s += ($s + $m < $n) ? $m - $badchar[ord($str[$s + $m])] : 1;
-            } else
-                $s += max(1, $j - $badchar[ord($str[$s + $j])]);
+        $searchSpeed = null;
+        if ($search) {
+            $result = BoyerMooyer::searchData($siswa, $siswa1, $mapel, $tahun, $kelas1, $surat, $guru2,  $tendik1, $guru, $this->searchList, $search);
+            $home = $result['result'];
+            $searchSpeed = $result['search_speed'];
         }
 
-        for ($j = 0; $j < $i; $j++) {
-            $result[$j] = $arr[$j];
-        }
 
-        return $result;
-    }
-    public function searchItem(Request $request)
-    {
-        $data = DB::table('tbl_orders_detail')
-            ->select(DB::raw("CONCAT(item_name,' Kondisi ',item_condition) as item"))->get();
-
-        $value = $this->SearchString($data, $request->item);
-        // dd($value);
+        return view('dashboard', compact('siswa', 'siswa1', 'mapel', 'tahun', 'kelas1', 'surat', 'guru2', 'tendik', 'kelas',  'tendik1', 'guru', 'searchSpeed'));
     }
 }

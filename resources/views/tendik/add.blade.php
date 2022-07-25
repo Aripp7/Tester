@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nama">Nama:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama">
+                    <input type="text" class="form-control" id="nama" name="nama_tendik" placeholder="Masukkan Nama">
                 </div>
             </div>
             <div class="form-group">

@@ -31,7 +31,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Nama</th>
-                                        <td style="text-transform:none;">{{$siswa->nama}}</td>
+                                        <td style="text-transform:none;">{{$siswa->nama_siswa}}</td>
 
                                     </tr>
                                     <tr>
@@ -80,7 +80,7 @@
                         </tbody>
 
                     </div>
-                    <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
+                    <a href="{{ route('siswa.edit', $siswa->id_siswa) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
                 </div>
             </div>
         </div>

@@ -55,10 +55,10 @@
                                             <td>{{ $no }}</td>
                                             <td>{{ $values->nama_kelas }}</td>
                                             <td>
-                                                <form action="{{ route('kelas.destroy', $values->id) }}" method="post">
+                                                <form action="{{ route('kelas.destroy', $values->id_kelas) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('kelas.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                    <a href="{{ route('kelas.edit', $values->id_kelas) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
 
                                                     <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus kelas {{ $values->nama_kelas }} ? ');" action="{{url('kelas',$values->id)}}"> <span class="fas fa-trash"></span>
 

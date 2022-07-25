@@ -14,7 +14,7 @@ class Surat extends Migration
     public function up()
     {
         Schema::create('surats', function (Blueprint $table) {
-            $table->integer('id_surat');
+            $table->id('id_surat');
             $table->string('jenis_surat', 50);
             $table->string('nomor_surat', 50);
             $table->date('tgl_surat');
