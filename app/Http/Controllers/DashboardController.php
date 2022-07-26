@@ -65,12 +65,21 @@ class DashboardController extends Controller
 
         $searchSpeed = null;
         if ($search) {
-            $result = BoyerMooyer::searchData($siswa, $siswa1, $mapel, $tahun, $kelas1, $surat, $guru2,  $tendik1, $guru, $this->searchList, $search);
-            $home = $result['result'];
+            // $result = BoyerMooyer::searchData($siswa, $siswa1,  $guru, $this->searchList, $search);
+            $result = BoyerMooyer::searchData($siswa, $siswa1, $mapel, $tahun, $kelas1, $surat, $guru2,  $tendik1,  $guru, $this->searchList, $search);
+            // $mapel, $tahun, $kelas1, $surat, $guru2,  $tendik1,
+            $siswa1 = $result['result'];
+            $guru2 = $result['result'];
+            $tendik1 = $result['result'];
+            $kelas1 = $result['result'];
+            $tahun = $result['result'];
+            $mapel = $result['result'];
+            $surat = $result['result'];
             $searchSpeed = $result['search_speed'];
         }
 
 
         return view('dashboard', compact('siswa', 'siswa1', 'mapel', 'tahun', 'kelas1', 'surat', 'guru2', 'tendik', 'kelas',  'tendik1', 'guru', 'searchSpeed'));
+        // return view('dashboard', compact('siswa', 'tendik', 'kelas', 'guru', 'searchSpeed'));
     }
 }
