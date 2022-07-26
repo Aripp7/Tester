@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Guru extends Model
 {
     protected $table = "guru";
+    protected $primaryKey = 'id_guru';
     public $timestamps = false;
     protected $fillable = [
         'nama_guru', 'Jenis_kelamin', 'nip', 'tempat_lahir', 'tgl_lahir', 'agama', 'alamat_jalan', 'rt', 'rw', 'nama_dusun', 'desa_kelurahan', 'kecamatan', 'pangkat_golongan'

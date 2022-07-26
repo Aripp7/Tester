@@ -43,7 +43,7 @@ Route::resource('guru', GuruController::class);
 Route::get('/addGuru', [GuruController::class, 'create']);
 Route::get('/editGuru', [GuruController::class, 'edit']);
 Route::put('/postGuru', [GuruController::class, 'store']);
-Route::put('guruUpdate/{id}', 'App\Http\Controllers\GuruController@update');
+Route::put('guruUpdate/{id_guru}', 'App\Http\Controllers\GuruController@update');
 
 
 //Login
@@ -58,13 +58,13 @@ Route::get('/addSiswa', [SiswaController::class, 'create']);
 Route::put('/postSiswa', [SiswaController::class, 'store']);
 Route::get('editSiswa', [SiswaController::class, 'edit']);
 // Route::put('siswaUpdate', [SiswaController::class, 'update'])->name('siswaUpdate');
-Route::put('siswaUpdate/{id}', 'App\Http\Controllers\SiswaController@update');
+Route::put('siswaUpdate/{id_siswa}', 'App\Http\Controllers\SiswaController@update');
 
 //tendik
 Route::resource('tendik', TendikController::class);;
 Route::get('/addTendik', [TendikController::class, 'create']);
 Route::put('/postTendik', [TendikController::class, 'store']);
-Route::put('tendikUpdate/{id}', 'App\Http\Controllers\TendikController@update');
+Route::put('tendikUpdate/{id_tendik}', 'App\Http\Controllers\TendikController@update');
 Route::get('/editTendik', [TendikController::class, 'edit']);
 
 //tahun ajaran
@@ -78,15 +78,15 @@ Route::get('/editTahun', [TahunController::class, 'edit']);
 Route::resource('kelas', KelasController::class);
 Route::get('/addKelas', [KelasController::class, 'create']);
 Route::put('/postKelas', [KelasController::class, 'store']);
-Route::put('kelasUpdate/{id}', 'App\Http\Controllers\KelasController@update');
+Route::put('kelasUpdate/{id_kelas}', 'App\Http\Controllers\KelasController@update');
 Route::get('/editKelas', [KelasController::class, 'edit']);
-Route::put('siswaUpdate/{id}', 'App\Http\Controllers\SiswaController@update');
+// Route::put('siswaUpdate/{id}', 'App\Http\Controllers\SiswaController@update');
 
 //user admin
 Route::resource('user', UserController::class);
 Route::get('/addUser', [UserController::class, 'create']);
 Route::put('/postUser', [UserController::class, 'store']);
-Route::put('userUpdate/{id}', 'App\Http\Controllers\UserController@update');
+Route::put('userUpdate/{id_user}', 'App\Http\Controllers\UserController@update');
 Route::get('/edituser', [UserController::class, 'edit']);
 Route::get('/show/{$id}', [UserController::class, 'edit']);
 
@@ -94,7 +94,7 @@ Route::get('/show/{$id}', [UserController::class, 'edit']);
 Route::resource('mapel', MapelController::class);
 Route::get('/addMapel', [MapelController::class, 'create']);
 Route::put('/postMapel', [MapelController::class, 'store']);
-Route::put('mapelUpdate/{id}', 'App\Http\Controllers\MapelController@update');
+Route::put('mapelUpdate/{id_mapel}', 'App\Http\Controllers\MapelController@update');
 Route::get('/editMapel', [MapelController::class, 'edit']);
 
 //surat
@@ -102,7 +102,7 @@ Route::resource('surat', SuratController::class);
 Route::get('/surat', [SuratController::class, 'index']);
 Route::get('/addSurat', [SuratController::class, 'create']);
 Route::put('/postSurat', [SuratController::class, 'store']);
-Route::put('suratUpdate/{id}', 'App\Http\Controllers\SuratController@update');
+Route::put('suratUpdate/{id_surat}', 'App\Http\Controllers\SuratController@update');
 Route::get('/editSurat', [SuratController::class, 'edit']);
 
 //jadwal
@@ -110,5 +110,5 @@ Route::resource('jadwal', JadwalController::class);
 Route::get('/jadwal', [JadwalController::class, 'index']);
 Route::get('/addJadwal', [JadwalController::class, 'create']);
 Route::put('/postJadwal', [JadwalController::class, 'store']);
-Route::put('suratJadwal/{id}', 'App\Http\Controllers\JadwalController@update');
+Route::put('updateJadwal/{id_jadwal}', 'App\Http\Controllers\JadwalController@update');
 Route::get('/editJadwal', [JadwalController::class, 'edit']);

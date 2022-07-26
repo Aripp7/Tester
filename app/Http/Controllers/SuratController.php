@@ -37,10 +37,10 @@ class SuratController extends Controller
      */
     public function store(Request $request)
     {
+        //penamaan dan penyimpanan file surat
         $file_surat = $request->file('file_surat');
         $name = 'Surat_' . date('Ymdhis') . '.' . $request->file('file_surat')->getClientOriginalExtension();
         $file_surat->move('dokumen/', $name);
-
 
         $model = new Surat;
         $model->jenis_surat = $request->jenis_surat;
@@ -73,9 +73,10 @@ class SuratController extends Controller
      * @param  \App\Models\Surat  $surat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Surat $surat)
+    public function edit($id_surat)
     {
-        //
+        $model = Surat::find($id_surat);
+        return view('surat.edit', compact('model'));
     }
 
     /**
@@ -96,9 +97,9 @@ class SuratController extends Controller
      * @param  \App\Models\Surat  $surat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Surat $id)
+    public function destroy($id_surat)
     {
-        $model =  Surat::find($id);
+        $model =  Surat::find($id_surat);
         $model->delete();
 
         return redirect()->route('surat.index')->with('success', 'Data Berhasil di Dihapus');

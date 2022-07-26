@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Mapel extends Model
 {
+    protected $primaryKey = 'id_mapel';
     protected $table = "mapel";
     public $timestamps = false;
 
@@ -15,9 +16,9 @@ class Mapel extends Model
         'kode_mapel', 'mapel'
     ];
 
-    public function detailData($id)
+    public function detailData($id_mapel)
     {
-        return DB::table('mapel')->where('id', $id)->first();
+        return DB::table('mapel')->where('id_mapel', $id_mapel)->first();
     }
 
     public function Jadwal()

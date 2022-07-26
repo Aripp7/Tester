@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Siswa extends Model
 {
+    protected $primaryKey = 'id_siswa';
     protected $table = "siswa";
     public $timestamps = false;
     protected $fillable = [
@@ -17,7 +18,7 @@ class Siswa extends Model
     public function allData()
     {
         $siswa = DB::table('siswa')
-            ->leftJoin('kelas', 'kelas.id', '=', 'siswa.id')
+            ->leftJoin('kelas', 'kelas.id_kelas', '=', 'siswa.id_siswa')
             ->get();
     }
 

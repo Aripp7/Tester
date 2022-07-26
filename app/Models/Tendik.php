@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Tendik extends Model
 {
+    protected $primaryKey = 'id_tendik';
     protected $table = "tendik";
     public $timestamps = false;
     protected $fillable = [
@@ -15,8 +16,8 @@ class Tendik extends Model
     ];
 
 
-    public function detailData($id)
+    public function detailData($id_tendik)
     {
-        return DB::table('tendik')->where('id_tendik', $id)->first();
+        return DB::table('tendik')->where('id_tendik', $id_tendik)->first();
     }
 }
