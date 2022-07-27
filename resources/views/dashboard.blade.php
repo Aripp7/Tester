@@ -27,7 +27,6 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-
                             <h3>{{$siswa}}</h3>
                             <p>Siswa</p>
                         </div>
@@ -63,7 +62,7 @@
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="/tendik" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/kelas" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

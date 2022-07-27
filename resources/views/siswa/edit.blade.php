@@ -25,9 +25,9 @@
             @method('PUT')
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="nama">Nama:</label>
+                <label class="control-label col-sm-2" for="nama_siswa">Nama:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" name="nama" value="{{$model->nama_siswa}}">
+                    <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{$model->nama_siswa}}">
                 </div>
             </div>
             <div class="form-group">

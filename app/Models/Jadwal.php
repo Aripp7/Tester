@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     protected $table = "jadwal_pelajaran";
+
+    protected $fillable = [
+        'id_jadwal', 'id_siswa', 'id_kelas', 'id_mapel', 'id_tahun', 'hari'
+    ];
     public $timestamps = false;
     use HasFactory;
 

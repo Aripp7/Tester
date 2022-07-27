@@ -20,9 +20,6 @@
                 <input type="text" class="form-control" id="nama_kelas" name="nama_kelas" aria-describedby="nama_kelas" required placeholder="Tahun" value="{{$model->nama_kelas}}">
                 <small style="margin-left: 10px;">cth Format : XI IPA 4</small>
             </div>
-
-
-
             <button type="submit" class="btn btn-primary">Edit</button>
             <a href="/kelas" class="btn btn-danger">Batal</a>
         </form>

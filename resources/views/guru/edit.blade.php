@@ -23,9 +23,9 @@
             {{ csrf_field() }}
             {{ method_field('put')}}
             <div class="form-group">
-                <label class="control-label col-sm-2" for="nama">Nama:</label>
+                <label class="control-label col-sm-2" for="nama_guru">Nama:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" name="nama" value="{{$model->nama_guru}}" placeholder="Masukkan Nama">
+                    <input type="text" class="form-control" id="nama_guru" name="nama_guru" value="{{$model->nama_guru}}" placeholder="Masukkan Nama">
                 </div>
             </div>
             <div class="form-group">
