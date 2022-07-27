@@ -76,9 +76,6 @@ class SiswaController extends Controller
 
 
         return redirect()->route('siswa.index')->with('success', 'Data Berhasil di Input');
-        // return back()->with([
-        //     'error' => 'Login Gagal!'
-        // ]);
     }
 
     /**
@@ -114,12 +111,12 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_siswa)
     {
         // return $request;
 
-        $model =  Siswa::find($id);
-        $model->nama = $request->nama;
+        $model =  Siswa::find($id_siswa);
+        $model->nama_siswa = $request->nama_siswa;
         $model->nisn = $request->nisn;
         $model->Jenis_kelamin = $request->Jenis_kelamin;
         $model->tgl_lahir = $request->tgl_lahir;
