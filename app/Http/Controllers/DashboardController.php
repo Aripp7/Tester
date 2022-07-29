@@ -30,7 +30,7 @@ class DashboardController extends Controller
     ];
     public function index()
     {
-
+        // count total data
         $siswa =  Siswa::count();
         $guru = Guru::count();
         $tendik = Tendik::count();
@@ -38,7 +38,6 @@ class DashboardController extends Controller
 
 
         $search = request('search');
-
 
         $siswa1 = DB::table('siswa')
             ->orderBy('id_siswa')
