@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Guru;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use App\Helper\BoyerMooyer;
+
 
 class GuruController extends Controller
 {
@@ -17,10 +21,34 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $searchList = [
+        'nama_guru',
+        'tempat_lahir',
+        'nip',
+        'agama',
+        'nama_dusun',
+
+        'alamat_jalan',
+        'kecamatan',
+        'desa_kelurahan',
+        'pangkat_golongan',
+
+
+    ];
     public function index()
     {
-        $datas = Guru::all();
-        return view('guru.index', compact('datas'));
+        $search = request('search');
+        $datas = DB::table('guru')->get();
+        $searchSpeed = null;
+        if ($search) {
+            $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
+            $cari = $result['result'];
+            $searchSpeed = $result['search_speed'];
+        }
+
+
+
+        return view('guru.index', compact('datas', 'searchSpeed'));
         //
     }
 
@@ -29,6 +57,7 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         $model = new Guru();

@@ -71,15 +71,15 @@
                         </li>
 
                     </ul>
-                <li class="nav-item">
+                    <!-- <li class="nav-item">
                     <a href="/mapel" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Mata Pelajaran
-                            <!-- <span class="right badge badge-danger">New</span> -->
+                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
-                </li>
+                </li> -->
 
 
                 </li>

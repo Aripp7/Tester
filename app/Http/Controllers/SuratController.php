@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Surat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use App\Helper\BoyerMooyer;
 
 class SuratController extends Controller
 {
@@ -12,10 +15,29 @@ class SuratController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $searchList = [
+        'nomor_surat',
+        'tgl_surat',
+        'tujuan',
+        'keterangan',
+        'file_surat',
+
+
+
+    ];
     public function index()
     {
-        $datas = Surat::all();
-        return view('surat.index', compact('datas'));
+
+
+        $search = request('search');
+        $datas = DB::table('surats')->get();
+        $searchSpeed = null;
+        if ($search) {
+            $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
+            $cari = $result['result'];
+            $searchSpeed = $result['search_speed'];
+        }
+        return view('surat.index', compact('datas', 'searchSpeed'));
     }
 
     /**

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Tendik;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Test;
+use Illuminate\Support\Facades\DB;
+use App\Helper\BoyerMooyer;
 
 class TendikController extends Controller
 {
@@ -17,12 +19,36 @@ class TendikController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $searchList = [
+        'nama_tendik',
+        'tempat_lahir',
+        'tgl_lahir',
+        'nip',
+        'agama',
+
+        'alamat_jalan',
+        'kecamatan',
+
+        'pangkat_golongan',
+
+
+    ];
     public function index()
     {
-        $datas = Tendik::all();
-        return view('tendik.index', compact('datas'));
-    }
+        $search = request('search');
+        $datas = DB::table('tendik')->get();
+        $searchSpeed = null;
+        if ($search) {
+            $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
+            $cari = $result['result'];
+            $searchSpeed = $result['search_speed'];
+        }
 
+
+
+        return view('tendik.index', compact('datas', 'searchSpeed'));
+        //
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -16,14 +16,11 @@
         </div>
     </div>
 </div><!-- /.container-fluid -->
-
+@include('search_bar/search-bar')
 
 <body class="hold-transition sidebar-mini">
-
     <section class="content">
-
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -81,7 +78,7 @@
                                                 <a href="{{ route('siswa.edit', $values->id_siswa) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
                                                 <a href="{{ route('siswa.show', $values->id_siswa) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
 
-                                                <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('siswa',$values->id_siswa)}}"> <span class="fas fa-trash"></span>
+                                                <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama_siswa }} ? ');" action="{{url('siswa',$values->id_siswa)}}"> <span class="fas fa-trash"></span>
 
                                                 </button>
                                             </form>

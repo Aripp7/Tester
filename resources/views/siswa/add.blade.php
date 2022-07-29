@@ -89,13 +89,13 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="kelas">Kelas:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Kelas"></input>
-                </div>
-                <small style="margin-left: 10px;">Contoh : XI IPA 2</small>
+                <select class="form-control select2" name="kelas" style="width: 50%; margin-left: 8px;">
+                    <option selected="selected">Pilih Kelas</option>
+                    @foreach ($kelas as $item)
+                    <option value="{{$item->nama_kelas}}">{{$item->nama_kelas}}</option>
+                    @endforeach
+                </select>
             </div>
-
-
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">

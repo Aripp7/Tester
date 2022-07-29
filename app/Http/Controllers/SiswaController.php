@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Helper\BoyerMooyer;
 use App\Models\Siswa;
 
 use App\Models\Kelas;
@@ -22,17 +23,30 @@ class SiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $searchList = [
+        'nama_siswa',
+        'nama_ayah',
+        'nama_ibu',
+        'kelas',
+        'nama_ayah',
+        'nisn',
+        'alamat',
+
+
+    ];
     public function index()
     {
+        $search = request('search');
+        $datas = DB::table('siswa')->get();
+        $searchSpeed = null;
+        if ($search) {
+            $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
+            $cari = $result['result'];
+            $searchSpeed = $result['search_speed'];
+        }
 
-        $datas = Siswa::all();
 
-
-        return view('siswa.index', compact('datas'));
-
-        // $datas = DB::table('siswa')->get();
-
-        // return view('siswa.index', ['siswa' => $datas]);
+        return view('siswa.index', compact('datas',  'searchSpeed'));
     }
 
 
@@ -43,9 +57,9 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        // $kelas = Kelas::all();
+        $kelas = Kelas::all();
         $model = new Siswa();
-        return view('siswa.add', compact('model'));
+        return view('siswa.add', compact('model', 'kelas'));
     }
 
     /**
@@ -57,7 +71,8 @@ class SiswaController extends Controller
     public function store(Request $request)
     {
 
-
+        // return $request;
+        $kelas = new Kelas();
         $model = new Siswa();
         $model->nisn = $request->nisn;
         $model->nama_siswa = $request->nama_siswa;

@@ -48,6 +48,7 @@
         </body> -->
     </div>
     <!-- /.container-fluid -->
+    @include('search_bar/search-bar')
 
     <body class="hold-transition sidebar-mini">
         <section class="content">
@@ -110,7 +111,7 @@
                                                     @method('DELETE')
                                                     <a href="{{ route('surat.edit', $values->id_surat) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
                                                     <!-- <a href="{{ route('surat.show', $values->id_surat) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a> -->
-                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama_surat }} ? ');" action="{{url('surat',$values->id_surat)}}"> <span class="fas fa-trash"></span>
+                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nomor_surat }} ? ');" action="{{url('surat',$values->id_surat)}}"> <span class="fas fa-trash"></span>
 
                                                     </button>
                                                 </form>

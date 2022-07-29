@@ -16,6 +16,7 @@
 
     </div>
     <!-- /.container-fluid -->
+    @include('search_bar/search-bar')
 
     <body class="hold-transition sidebar-mini">
         <section class="content">
@@ -87,7 +88,7 @@
                                                     <a href="{{ route('tendik.edit', $values->id_tendik) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
                                                     <a href="{{ route('tendik.show', $values->id_tendik) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
 
-                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('tendik',$values->id)}}"> <span class="fas fa-trash"></span>
+                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama_tendik }} ? ');" action="{{url('tendik',$values->id_tendik)}}"> <span class="fas fa-trash"></span>
 
                                                     </button>
                                                 </form>

@@ -15,11 +15,12 @@
         </div>
     </div>
 </div>
-<!-- /.container-fluid -->
-<!-- Default box -->
-@include('search_bar/search-bar')
+
+
+
+
 <div class="card">
-    <section class="content">
+    <section class="content" style="margin-top: 10px;">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
@@ -84,7 +85,7 @@
     </section>
 </div>
 
-@include('hasil_search/hasil')
+
 
 
 
