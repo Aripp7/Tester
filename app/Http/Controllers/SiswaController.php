@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Helper\BoyerMooyer;
 use App\Models\Siswa;
-
 use App\Models\Kelas;
-use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
+use App\Exports\SiswaExport;
+use Barryvdh\DomPDF\Facade\pdf;
+use Excel;
+
 
 class SiswaController extends Controller
 {
@@ -160,5 +162,21 @@ class SiswaController extends Controller
 
 
         return redirect()->route('siswa.index')->with('success', 'Data Berhasil di Dihapus');
+    }
+
+    public function exportSiswa()
+    {
+
+        $data = DB::table('siswa')
+            ->orderBy('nisn', 'ASC')
+            ->get();
+        view()->share('data', $data);
+        $pdf = pdf::loadView('pdf.siswa');
+        return $pdf->download('data-siswa.pdf');
+    }
+    public function exportExcelSiswa()
+    {
+
+        return Excel::download(new SiswaExport, 'data-siswa.xlsx');
     }
 }

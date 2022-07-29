@@ -16,9 +16,6 @@
     </div>
 </div>
 
-
-
-
 <div class="card">
     <section class="content" style="margin-top: 10px;">
         <div class="container-fluid">

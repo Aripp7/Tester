@@ -44,7 +44,8 @@ Route::get('/addGuru', [GuruController::class, 'create']);
 Route::get('/editGuru', [GuruController::class, 'edit']);
 Route::put('/postGuru', [GuruController::class, 'store']);
 Route::put('guruUpdate/{id_guru}', 'App\Http\Controllers\GuruController@update');
-
+Route::get('/exportGuru', [GuruController::class, 'exportGuru']);
+Route::get('/exportExcelGuru', [GuruController::class, 'exportExcelGuru']);
 
 //Login
 Route::get('/adminLogin', [LoginController::class, 'halamanLogin'])->middleware('guest')->name('login');
@@ -59,6 +60,8 @@ Route::put('/postSiswa', [SiswaController::class, 'store']);
 Route::get('editSiswa', [SiswaController::class, 'edit']);
 // Route::put('siswaUpdate', [SiswaController::class, 'update'])->name('siswaUpdate');
 Route::put('siswaUpdate/{id_siswa}', 'App\Http\Controllers\SiswaController@update');
+Route::get('/exportExcelSiswa', [SiswaController::class, 'exportExcelSiswa']);
+Route::get('/exportSiswa', [SiswaController::class, 'exportSiswa']);
 
 //tendik
 Route::resource('tendik', TendikController::class);;
@@ -66,6 +69,8 @@ Route::get('/addTendik', [TendikController::class, 'create']);
 Route::put('/postTendik', [TendikController::class, 'store']);
 Route::put('tendikUpdate/{id_tendik}', 'App\Http\Controllers\TendikController@update');
 Route::get('/editTendik', [TendikController::class, 'edit']);
+Route::get('/exportTendik', [TendikController::class, 'exportTendik']);
+Route::get('/exportExcel', [TendikController::class, 'exportExcel']);
 
 //tahun ajaran
 Route::resource('tahun', TahunController::class);

@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tendik;
+use App\Exports\TendikExport;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Test;
 use Illuminate\Support\Facades\DB;
 use App\Helper\BoyerMooyer;
+use Barryvdh\DomPDF\Facade\pdf;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Excel;
 
 class TendikController extends Controller
 {
@@ -157,5 +161,21 @@ class TendikController extends Controller
         $model =  Tendik::find($id);
         $model->delete();
         return redirect()->route('tendik.index')->with('success', 'Data Berhasil dihapus');
+    }
+
+    public function exportTendik()
+    {
+
+        $data = DB::table('tendik')
+            ->orderBy('nip', 'DESC')
+            ->get();
+        view()->share('data', $data);
+        $pdf = pdf::loadView('pdf.tendik');
+        return $pdf->download('dataTendik.pdf');
+    }
+    public function exportExcel()
+    {
+
+        return Excel::download(new TendikExport, 'tendik.xlsx');
     }
 }

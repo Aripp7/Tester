@@ -45,10 +45,16 @@
                                 </a>
                             </ol>
                             <ol class="breadcrumb float-sm-right">
-                                <a href="cetakGuru" class="btn btn-primary" style="margin-left: 10px;">
-                                    <i class="fa fa-print"></i>
-                                    Cetak Laporan
-                                </a>
+                                <div class="dropdown">
+                                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-print"></i> Cetak Data
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="exportGuru">PDF</a>
+                                        <a class="dropdown-item" href="exportExcelGuru">Excel</a>
+
+                                    </div>
+                                </div>
                             </ol>
                         </div>
                         <!-- /.card-header -->
@@ -58,9 +64,7 @@
                                     <tr style="background-color: #0069d9; color: white; size: 8px">
                                         <th>Nip</th>
                                         <th>Nama Guru</th>
-
                                         <th>Alamat</th>
-
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>

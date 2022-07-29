@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Guru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Barryvdh\DomPDF\Facade\pdf;
 use App\Helper\BoyerMooyer;
+use App\Exports\GuruExport;
+use Excel;
+
 
 
 class GuruController extends Controller
@@ -27,7 +30,6 @@ class GuruController extends Controller
         'nip',
         'agama',
         'nama_dusun',
-
         'alamat_jalan',
         'kecamatan',
         'desa_kelurahan',
@@ -161,5 +163,23 @@ class GuruController extends Controller
         $model->delete();
 
         return redirect()->route('guru.index')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportPDFGuru()
+    {
+
+        // $data = Guru::all();
+        $data = DB::table('guru')
+            ->orderBy('nip', 'DESC')
+            ->get();
+        view()->share('data', $data);
+        $pdf = pdf::loadView('pdf.guru');
+        return $pdf->download('dataGuru.pdf');
+    }
+
+    public function exportExcelGuru()
+    {
+
+        return Excel::download(new GuruExport, 'data-guru.xlsx');
     }
 }

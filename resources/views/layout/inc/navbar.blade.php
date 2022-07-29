@@ -13,11 +13,11 @@
         <!-- Navbar profile -->
         <li class="dropdown">
             <img src="/public/img/icons8-user-80.png" alt="">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Admin<span class="caret"></span> <i class="fas fa-user"></i></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Admin <i class="fas fa-user"></i></a><span class="caret"></span>
             <ul class="dropdown-menu">
-                <li>
+                <!-- <li>
                     <a href="profile" class="btn btn-link navbar-btn navbar-link">Profile</a>
-                </li>
+                </li> -->
                 <li>
                     <button type="button" class="btn btn-link navbar-btn navbar-link" data-toggle="modal" data-target="#myModal">Logout</button>
                 </li>
@@ -42,10 +42,10 @@
             </div>
             <!-- footer modal -->
             <div class="modal-footer">
+                <a href="logout" class="btn btn-danger">Logout</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Batal</a>
 
-                <a href="#" class="btn btn-primary" data-dismiss="modal">Indak Jadi</a>
 
-                <a href="logout" class="btn btn-danger">Gass Logout</a>
             </div>
         </div>
     </div>

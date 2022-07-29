@@ -45,10 +45,16 @@
                                     </a>
                                 </ol>
                                 <ol class="breadcrumb float-sm-right">
-                                    <a href="cetakTendik" class="btn btn-primary" style="margin-left: 10px;">
-                                        <i class="fa fa-print"></i>
-                                        Cetak Laporan
-                                    </a>
+                                    <div class="dropdown">
+                                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-print"></i> Cetak Data
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="exportTendik">PDF</a>
+                                            <a class="dropdown-item" href="exportExcel">Excel</a>
+
+                                        </div>
+                                    </div>
                                 </ol>
                             </div>
 
