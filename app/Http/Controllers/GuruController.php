@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\pdf;
 use App\Helper\BoyerMooyer;
 use App\Exports\GuruExport;
-use Excel;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 
 

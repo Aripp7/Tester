@@ -9,7 +9,7 @@ use App\Models\Kelas;
 use Illuminate\Http\Request;
 use App\Exports\SiswaExport;
 use Barryvdh\DomPDF\Facade\pdf;
-use Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class SiswaController extends Controller

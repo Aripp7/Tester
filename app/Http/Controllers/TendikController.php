@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Helper\BoyerMooyer;
 use Barryvdh\DomPDF\Facade\pdf;
 use Maatwebsite\Excel\Concerns\FromCollection;
-use Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TendikController extends Controller
 {
