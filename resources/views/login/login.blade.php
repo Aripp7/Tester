@@ -63,6 +63,11 @@
                             <a href="dashboard">Lupa Password?</a>
                         </div>
 
+                        <div class="col-4" style="margin-top: 60px; margin-left: 110px;">
+                            <a href="/">Homepage</a>
+
+                        </div>
+
 
                     </div>
                     <!-- /.col -->

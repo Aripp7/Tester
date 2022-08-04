@@ -48,8 +48,6 @@ class GuruController extends Controller
             $searchSpeed = $result['search_speed'];
         }
 
-
-
         return view('guru.index', compact('datas', 'searchSpeed'));
         //
     }

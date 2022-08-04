@@ -24,16 +24,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
 Route::group(['middleware' => 'auth'], function () {
     //dashboard
 
 });
 
-
-
-Route::get('/', function () {
-    return view('index');
-});
 
 Route::resource('dashboard', DashboardController::class);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -44,7 +42,7 @@ Route::get('/addGuru', [GuruController::class, 'create']);
 Route::get('/editGuru', [GuruController::class, 'edit']);
 Route::put('/postGuru', [GuruController::class, 'store']);
 Route::put('guruUpdate/{id_guru}', 'App\Http\Controllers\GuruController@update');
-Route::get('/exportGuru', [GuruController::class, 'exportGuru']);
+Route::get('/exportPDFGuru', [GuruController::class, 'exportPDFGuru']);
 Route::get('/exportExcelGuru', [GuruController::class, 'exportExcelGuru']);
 
 //Login
@@ -85,7 +83,7 @@ Route::get('/addKelas', [KelasController::class, 'create']);
 Route::put('/postKelas', [KelasController::class, 'store']);
 Route::put('kelasUpdate/{id_kelas}', 'App\Http\Controllers\KelasController@update');
 Route::get('/editKelas', [KelasController::class, 'edit']);
-// Route::put('siswaUpdate/{id}', 'App\Http\Controllers\SiswaController@update');
+
 
 //user admin
 Route::resource('user', UserController::class);

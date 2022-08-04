@@ -25,6 +25,7 @@
 
         </li>
     </ul>
+
 </nav>
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -44,8 +45,6 @@
             <div class="modal-footer">
                 <a href="logout" class="btn btn-danger">Logout</a>
                 <a href="#" class="btn btn-primary" data-dismiss="modal">Batal</a>
-
-
             </div>
         </div>
     </div>

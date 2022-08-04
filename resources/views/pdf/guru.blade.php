@@ -18,10 +18,30 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        hr {
+            width: 100%;
+            color: #000000;
+        }
     </style>
 </head>
 
 <body>
+    <article>
+        <header>
+            <!-- <img src="/adminlte/dist/img/smaguguak.png"> -->
+            <h3 align="center">DINAS PENDIDIKAN</h3>
+            <h2 align="center" style="margin-top: -20px">SMA NEGERI 1 KECAMATAN GUGUAK</h2>
+            <p align="center" style="margin-top: -20px">Jalan Tan Malaka KM 15 , Kubuang Tungkek, Kec. Guguak, Kab. Lima Puluh Kota
+            </p>
+            <p align="center" style="margin-top: -15px">Telepon : (0751) 767281, Fax. (0751) 3423423
+            </p>
+            <p align="center" style="margin-top: -15px"> Laman : http://sman1guguak.sch.id , Email : sman1guguak@gmail.com</p>
+            <hr>
+
+    </article>
+
+
     <h2 align="center">Daftar Guru SMA N 1 Kec.Guguak</h2>
     <div style="overflow-x: auto;">
         <table>

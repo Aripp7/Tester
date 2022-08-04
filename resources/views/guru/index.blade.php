@@ -50,7 +50,7 @@
                                         <i class="fa fa-print"></i> Cetak Data
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="exportGuru">PDF</a>
+                                        <a class="dropdown-item" href="exportPDFGuru">PDF</a>
                                         <a class="dropdown-item" href="exportExcelGuru">Excel</a>
 
                                     </div>
