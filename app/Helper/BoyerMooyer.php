@@ -47,7 +47,7 @@ class BoyerMooyer
         // count((is_countable($listData) ? $listData : []))
         // count(array($variable));
         // count($listData);
-        for ($i = 0; $i < count($listData); $i++) {
+        for ($i = 0; $i < count((is_countable($listData) ? $listData : [])); $i++) {
             $data = $listData[$i];
 
             // convert object to associative array

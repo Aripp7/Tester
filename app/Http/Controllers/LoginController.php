@@ -61,25 +61,25 @@ class LoginController extends Controller
     // }
     public function postLogin(Request $request)
     {
-        $validator = Validator::make($request->all(), $this->rules);
-        if ($validator->fails()) {
-            return back()->with('message', 'Silahkan Login Kembali');
-        } else {
-            $email = $request->email;
-            $password = $request->password;
+        // $validator = Validator::make($request->all(), $this->rules);
+        // if ($validator->fails()) {
+        //     return back()->with('message', 'Silahkan Login Kembali');
+        // } else {
+        //     $email = $request->email;
+        //     $password = $request->password;
 
-            $cek = DB::table('users')->where('email', $email)->where('password', $password)->first();
-            // dd($cek);
-            if ($cek == TRUE) {
-                $request->session()->put("id", $cek->id);
-                $request->session()->put("nama", $cek->nama);
-                $request->session()->put("username", $cek->username);
+        //     $cek = DB::table('users')->where('email', $email)->where('password', $password)->first();
+        //     // dd($cek);
+        //     if ($cek == TRUE) {
+        //         $request->session()->put("id", $cek->id);
+        //         $request->session()->put("nama", $cek->nama);
+        //         $request->session()->put("username", $cek->username);
 
-                return redirect()->route('dashboard')->with('message', 'Selamat Datang');
-            } else {
-                return back()->with('message', 'Silahkan Login Kembali');
-            }
-        }
+        //         return redirect()->route('dashboard')->with('message', 'Selamat Datang');
+        //     } else {
+        //         return back()->with('message', 'Silahkan Login Kembali');
+        //     }
+        // }
     }
     public function logout()
     {

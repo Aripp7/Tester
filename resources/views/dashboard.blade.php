@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-
+<!-- @include('search_bar/search-bar') -->
 <div class="card">
     <section class="content" style="margin-top: 10px;">
         <div class="container-fluid">

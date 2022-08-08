@@ -15,18 +15,23 @@ class DashboardController extends Controller
 {
 
     private $searchList = [
-        'nama_siswa',
         'nama_guru',
-        'nama_tendik',
-        'file_surat',
-        'keterangan',
-        'nomor_surat',
-        'alamat',
-        'alamat_jalan',
-        'pangkat_golongan',
+        'tempat_lahir',
         'nip',
+        'agama',
+        'nama_dusun',
+        'alamat_jalan',
+        'kecamatan',
+        'desa_kelurahan',
+        'pangkat_golongan',
+        'nama_siswa',
+        'nama_ayah',
+        'nama_ibu',
+        'kelas',
+        'nama_ayah',
         'nisn',
-        'tujuan',
+        'alamat',
+        'nama_tendik',
     ];
     public function index()
     {
@@ -38,47 +43,27 @@ class DashboardController extends Controller
 
 
         $search = request('search');
-
-        $siswa1 = DB::table('siswa')
-            ->orderBy('id_siswa')
-            ->get();
-        $guru2 = DB::table('guru')
-            ->orderBy('id_guru')
-            ->get();
-        $surat = DB::table('surats')
-            ->orderBy('id_surat')
-            ->get();
-        $tendik1 = DB::table('tendik')
-            ->orderBy('id_tendik')
-            ->get();
-        $kelas1 = DB::table('kelas')
-            ->orderBy('id_kelas')
-            ->get();
-        $tahun = DB::table('tahun_ajaran')
-            ->orderBy('id_tahun')
-            ->get();
-        $mapel = DB::table('mapel')
-            ->orderBy('id_mapel')
-            ->get();
+        $data1 = DB::table('siswa')->get();
+        $data2 = DB::table('guru')->get();
+        $data3 = DB::table('surats')->get();
+        $data4 = DB::table('tendik')->get();
+        $data5 = DB::table('kelas')->get();
 
 
         $searchSpeed = null;
         if ($search) {
-            // $result = BoyerMooyer::searchData($siswa, $siswa1,  $guru, $this->searchList, $search);
-            $result = BoyerMooyer::searchData($siswa, $siswa1, $mapel, $tahun, $kelas1, $surat, $guru2,  $tendik1,  $guru, $this->searchList, $search);
-            // $mapel, $tahun, $kelas1, $surat, $guru2,  $tendik1,
-            $siswa1 = $result['result'];
-            $guru2 = $result['result'];
-            $tendik1 = $result['result'];
-            $kelas1 = $result['result'];
-            $tahun = $result['result'];
-            $mapel = $result['result'];
-            $surat = $result['result'];
+            $result = BoyerMooyer::searchData($data1,  $data2, $data3, $data4,  $data5, $this->searchList, $search);
+
+            $data1 = $result['result'];
+            $data2 = $result['result'];
+            $data3 = $result['result'];
+            $data4 = $result['result'];
+            $data5 = $result['result'];
+
             $searchSpeed = $result['search_speed'];
         }
 
 
-        return view('dashboard', compact('siswa', 'siswa1', 'mapel', 'tahun', 'kelas1', 'surat', 'guru2', 'tendik', 'kelas',  'tendik1', 'guru', 'searchSpeed'));
-        // return view('dashboard', compact('siswa', 'tendik', 'kelas', 'guru', 'searchSpeed'));
+        return view('dashboard', compact('siswa', 'tendik', 'kelas', 'guru', 'data1', 'data2', 'data3', 'data4',  'data5',  'searchSpeed'));
     }
 }

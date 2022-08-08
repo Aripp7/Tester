@@ -43,10 +43,9 @@ class SiswaController extends Controller
         $searchSpeed = null;
         if ($search) {
             $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
-            $cari = $result['result'];
+            $datas = $result['result'];
             $searchSpeed = $result['search_speed'];
         }
-
 
         return view('siswa.index', compact('datas',  'searchSpeed'));
     }

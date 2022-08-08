@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use Illuminate\Http\Request;
+use App\Helper\BoyerMooyer;
+use Illuminate\Support\Facades\DB;
 
 class KelasController extends Controller
 {
@@ -12,10 +14,25 @@ class KelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $searchList = [
+        'nama_kelas',
+
+
+
+    ];
     public function index()
     {
-        $datas = Kelas::all();
-        return view('kelas.index', compact('datas'));
+
+        $search = request('search');
+        $datas = DB::table('kelas')->get();
+        $searchSpeed = null;
+        if ($search) {
+            $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
+            $datas = $result['result'];
+            $searchSpeed = $result['search_speed'];
+        }
+
+        return view('kelas.index', compact('datas',  'searchSpeed'));
     }
 
     /**

@@ -10,7 +10,9 @@
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-primary btn-block">Cari Data</button>
+                    <a href="" class="btn btn-primary btn-block">Reset</a>
                 </div>
+
             </div>
 
             <div class="row mt-2">
