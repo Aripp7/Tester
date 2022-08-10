@@ -27,12 +27,12 @@ class SiswaController extends Controller
      */
     private $searchList = [
         'nama_siswa',
-        'nama_ayah',
-        'nama_ibu',
-        'kelas',
-        'nama_ayah',
         'nisn',
-        'alamat',
+        // 'nama_ayah',
+        // 'nama_ibu',
+        // 'kelas',
+        // 'nama_ayah',
+        // 'alamat',
 
 
     ];

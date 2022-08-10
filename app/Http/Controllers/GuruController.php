@@ -27,14 +27,15 @@ class GuruController extends Controller
      */
     private $searchList = [
         'nama_guru',
-        'tempat_lahir',
+
         'nip',
-        'agama',
-        'nama_dusun',
-        'alamat_jalan',
-        'kecamatan',
-        'desa_kelurahan',
-        'pangkat_golongan',
+        // 'agama',
+        // 'nama_dusun',
+        // 'alamat_jalan',
+        // 'kecamatan',
+        // 'desa_kelurahan',
+        // 'pangkat_golongan',
+        // 'tempat_lahir',
 
 
     ];

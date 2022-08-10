@@ -25,13 +25,14 @@ class TendikController extends Controller
      */
     private $searchList = [
         'nama_tendik',
-        'tempat_lahir',
-        'tgl_lahir',
         'nip',
-        'agama',
-        'alamat_jalan',
-        'kecamatan',
-        'pangkat_golongan',
+        // 'tempat_lahir',
+        // 'tgl_lahir',
+
+        // 'agama',
+        // 'alamat_jalan',
+        // 'kecamatan',
+        // 'pangkat_golongan',
 
 
     ];

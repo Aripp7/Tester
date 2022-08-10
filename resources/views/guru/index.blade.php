@@ -35,7 +35,7 @@
 
             <div class="row mt-2">
                 <div class="col">
-                    <p>Kecepatan pencarian : {{ $searchSpeed ? round($searchSpeed, 2) . ' detik' : '-' }}</p>
+                    <p>Kecepatan pencarian : {{ $searchSpeed ? round($searchSpeed, 2) . ' ms' : '-' }}</p>
                 </div>
             </div>
         </form>
