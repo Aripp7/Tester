@@ -38,7 +38,7 @@
             </p>
             <p align="center" style="margin-top: -15px"> Laman : http://sman1guguak.sch.id , Email : sman1guguak@gmail.com</p>
             <hr>
-
+        </header>
     </article>
 
 
