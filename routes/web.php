@@ -47,8 +47,9 @@ Route::get('/exportExcelGuru', [GuruController::class, 'exportExcelGuru']);
 
 //Login
 Route::get('/adminLogin', [LoginController::class, 'halamanLogin'])->middleware('guest')->name('login');
-Route::post('/postLogin', [LoginController::class, 'postLogin']);
+// Route::post('postLogin', [LoginController::class, 'postLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
+Route::post('postLogin', 'App\Http\Controllers\LoginController@postLogin')->name('login-admin');
 
 
 //siswa

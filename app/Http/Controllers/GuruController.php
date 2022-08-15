@@ -27,7 +27,6 @@ class GuruController extends Controller
      */
     private $searchList = [
         'nama_guru',
-
         'nip',
         // 'agama',
         // 'nama_dusun',

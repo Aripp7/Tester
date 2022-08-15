@@ -26,7 +26,7 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg"><b>Selamat Datang Administrator</b></p>
 
-                <form action="postLogin" method="POST">
+                <form action="{{route('login-admin')}}" method="POST">
                     @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{session('success')}}
@@ -41,10 +41,10 @@
                     @endif
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
@@ -62,6 +62,8 @@
                             <input type="submit" class="btn btn-primary btn-block" value="Login"></input>
                             <a href="dashboard">Lupa Password?</a>
                         </div>
+
+
 
                         <div class="col-4" style="margin-top: 60px; margin-left: 110px;">
                             <a href="/">Homepage</a>

@@ -66,7 +66,7 @@
                                         <?php $no++; ?>
                                         <tr>
                                             <td>{{ $no }}</td>
-                                            <td>{{ $values->nama }}</td>
+                                            <td>{{ $values->name }}</td>
                                             <td>{{ $values->username }}</td>
                                             <td>{{ $values->email }}</td>
                                             <td>

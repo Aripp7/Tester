@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->rules = [
-    //         'email' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/',
-    //         'password' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/'
-    //     ];
-    // }
+    public function __construct()
+    {
+        $this->rules = [
+            'username' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/',
+            'password' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/'
+        ];
+    }
 
     public function halamanLogin()
     {
@@ -28,38 +28,40 @@ class LoginController extends Controller
         // return $request;
         // dd($request);
 
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+        // $credentials = $request->validate([
+        //     'username' => ['required'],
+        //     'password' => ['required'],
+        // ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+        //     if (Auth::attempt($credentials)) {
+        //         $request->session()->regenerate();
+        //         return redirect()->intended('/dashboard');
+        //     }
+
+        //     // return redirect()->intended('/dashboard');
+        //     return back()->with('loginError', 'Login failed');
+        // }
+
+        $validator = Validator::make($request->all(), $this->rules);
+        if ($validator->fails()) {
+            return back()->with('loginError', 'Silahkan Login Kembali');
+        } else {
+            $username = $request->email;
+            $password = $request->password;
+
+            $cek = DB::table('users')->where('username', $username)->where('password', $password)->first();
+            // dd($cek);
+            if ($cek == TRUE) {
+                $request->session()->put("id", $cek->id);
+                $request->session()->put("username", $cek->username);
+
+                return redirect()->route('/dashboard')->with('message', 'Selamat Datang');
+            } else {
+                return back()->with('message', 'Silahkan Login Kembali');
+            }
         }
-
-        return redirect()->intended('/dashboard');
     }
 
-    // $validator = Validator::make($request->all(), $this->rules);
-    // if ($validator->fails()) {
-    //     return back()->with('message', 'Silahkan Login Kembali');
-    // } else {
-    //     $email = $request->email;
-    //     $password = $request->password_pengguna;
-
-    //     $cek = DB::table('users')->where('username', $email)->where('password', $password)->first();
-    //     // dd($cek);
-    //     if ($cek == TRUE) {
-    //         $request->session()->put("id", $cek->id_pengguna);
-    //         $request->session()->put("username", $cek->nama_pengguna);
-
-    //         return redirect()->route('dashboard')->with('message', 'Selamat Datang');
-    //     } else {
-    //         return back()->with('message', 'Silahkan Login Kembali');
-    //     }
-    // }
-    // }
     // public function postLogin(Request $request)
     // {
     // $validator = Validator::make($request->all(), $this->rules);

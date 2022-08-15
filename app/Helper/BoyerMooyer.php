@@ -8,9 +8,7 @@ class BoyerMooyer
 {
     private static function array_multi_unique($multiArray)
     {
-
         $uniqueArray = array();
-
         foreach ($multiArray as $subArray) {
 
             if (!in_array($subArray, $uniqueArray)) {
@@ -46,7 +44,7 @@ class BoyerMooyer
         $result = [];
 
         // count($listData);
-        for ($i = 0; $i < count((is_countable($listData) ? $listData : [])); $i++) {
+        for ($i = 0; $i < count($listData); $i++) {
             $data = $listData[$i];
 
             // convert object to associative array
