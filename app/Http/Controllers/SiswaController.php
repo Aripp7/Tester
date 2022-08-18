@@ -28,18 +28,21 @@ class SiswaController extends Controller
     private $searchList = [
         'nama_siswa',
         'nisn',
-        // 'nama_ayah',
-        // 'nama_ibu',
-        // 'kelas',
-        // 'nama_ayah',
-        // 'alamat',
+        'nama_ayah',
+        'nama_ibu',
+        'kelas',
+        'nama_ayah',
+        'alamat',
 
 
     ];
-    public function index()
+    public function index(Request $request)
     {
+        $start = microtime(true);
+
         $search = request('search');
         $datas = DB::table('siswa')->get();
+
         $searchSpeed = null;
         if ($search) {
             $result = BoyerMooyer::searchData($datas,  $this->searchList, $search);
@@ -47,7 +50,21 @@ class SiswaController extends Controller
             $searchSpeed = $result['search_speed'];
         }
 
-        return view('siswa.index', compact('datas',  'searchSpeed'));
+        $cari = $request['cari'] ?? "";
+        $start = microtime(true);
+        if ($cari != "") {
+            $searchSpeed = null;
+            $datas = Siswa::Where('nama_siswa', 'LIKE', "%$cari%")->orWhere('nisn', 'LIKE', "%$cari%")->orWhere('nama_ayah', 'LIKE', "%$cari%")->orWhere('nama_ibu', 'LIKE', "%$cari%")->orWhere('kelas', 'LIKE', "%$cari%")->orWhere('alamat', 'LIKE', "%$cari%")->get();
+            $end = microtime(true); // end time
+
+            $speedResult = $end - $start;
+            $searchSpeed = $speedResult * 1000;
+        } else {
+            // $datas = Siswa::all();
+        }
+        return view('siswa.index', compact('datas',  'cari', 'searchSpeed'));
+
+        // return view('siswa.index', compact('datas'));
     }
 
 

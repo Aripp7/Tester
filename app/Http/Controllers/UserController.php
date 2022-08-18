@@ -79,7 +79,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $model =  User::find($id);
-        return view('pegawai.edit', compact('model'));
+        return view('user.edit', compact('model'));
     }
 
     /**

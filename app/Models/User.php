@@ -18,7 +18,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_user';
     protected $table = "users";
     protected $fillable = [
         'username',
@@ -46,8 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function detailData($id)
+    public function detailData($id_user)
     {
-        return DB::table('users')->where('id', $id)->first();
+        return DB::table('users')->where('id_user', $id_user)->first();
     }
 }

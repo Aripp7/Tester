@@ -42,6 +42,29 @@
     </div>
 </div>
 
+<!-- <div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Pencarian Data Standar</h3>
+    </div>
+    <div class="card-body">
+        <form method="">
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="cari" value="{{ $cari }}">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-block">Cari Data</button>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <p>Kecepatan pencarian : {{ $searchSpeed ? round($searchSpeed, 2) . ' ms' : '-' }}</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
+
 <body class="hold-transition sidebar-mini">
     <section class="content">
         <div class="container-fluid">
@@ -82,6 +105,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr style="background-color: #0069d9; color: white; size: 8px">

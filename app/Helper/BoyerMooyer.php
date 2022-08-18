@@ -42,7 +42,7 @@ class BoyerMooyer
     {
         $start = microtime(true); // start time
         $result = [];
-
+        // count((is_countable($listData) ? $listData : []))
         // count($listData);
         for ($i = 0; $i < count($listData); $i++) {
             $data = $listData[$i];

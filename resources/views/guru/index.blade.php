@@ -83,7 +83,8 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+
+                            <table id="example1" class="table table-bordered table-striped mt-lg-3">
                                 <thead>
                                     <tr style="background-color: #0069d9; color: white; size: 8px">
                                         <th>Nip</th>

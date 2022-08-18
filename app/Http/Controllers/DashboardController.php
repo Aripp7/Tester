@@ -8,6 +8,8 @@ use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Tendik;
+use App\Models\Surat;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -15,23 +17,17 @@ class DashboardController extends Controller
 {
 
     private $searchList = [
-        'nama_guru',
-        'tempat_lahir',
-        'nip',
-        'agama',
-        'nama_dusun',
-        'alamat_jalan',
-        'kecamatan',
-        'desa_kelurahan',
-        'pangkat_golongan',
         'nama_siswa',
-        'nama_ayah',
-        'nama_ibu',
-        'kelas',
-        'nama_ayah',
         'nisn',
-        'alamat',
+        'nama_guru',
+        'nip',
         'nama_tendik',
+        'nomor_surat',
+        'tgl_surat',
+        'tujuan',
+        'keterangan',
+        'file_surat',
+        'nama_kelas',
     ];
     public function index()
     {
@@ -41,13 +37,19 @@ class DashboardController extends Controller
         $tendik = Tendik::count();
         $kelas = Kelas::count();
 
-
+        //pemanggilan boyer moore
         $search = request('search');
-        $data1 = DB::table('siswa')->get();
-        $data2 = DB::table('guru')->get();
-        $data3 = DB::table('surats')->get();
-        $data4 = DB::table('tendik')->get();
-        $data5 = DB::table('kelas')->get();
+        // $data1 = DB::table('siswa')->get();
+        // $data2 = DB::table('guru')->get();
+        // $data3 = DB::table('surats')->get();
+        // $data4 = DB::table('tendik')->get();
+        // $data5 = DB::table('kelas')->get();
+
+        $data1 = Siswa::all();
+        $data2 = Guru::all();
+        $data3 = Tendik::all();
+        $data4 = Surat::all();
+        $data5 = Kelas::all();
 
 
         $searchSpeed = null;

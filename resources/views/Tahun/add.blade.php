@@ -7,6 +7,7 @@
         <div class="col-sm-6">
             <h1>Tambah Tahun Ajaran</h1>
         </div>
+
     </div>
 </div>
 <!-- Main content -->
