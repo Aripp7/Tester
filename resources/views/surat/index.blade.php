@@ -122,7 +122,10 @@
                                         <tr>
                                             <td>{{ $no}}</td>
                                             <td>{{ $values->tgl_surat }}</td>
-                                            <td>{{ $values->jenis_surat }}</td>
+
+                                            <td style="justify-content: center;"><span class="{{ ($values->jenis_surat == 'Surat Masuk') ? 'badge badge-success' : 'badge badge-info' }}">{{ $values->jenis_surat }}</span>
+                                            </td>
+                                            <!-- <td>{{ $values->jenis_surat }}</td> -->
                                             <td>{{ $values->tujuan }}</td>
                                             <td>{{ $values->keterangan }}</td>
                                             <td align="center">

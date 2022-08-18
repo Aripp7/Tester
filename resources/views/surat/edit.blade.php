@@ -27,8 +27,8 @@
                 <label class="control-label col-sm-2" for="jenis_surat">Jenis Surat:</label>
                 <select class="form-control select2" name="jenis_surat" style="width: 50%; margin-left: 8px;">
                     <option selected="selected">Pilih Jenis Surat</option>
-                    <option {{$model->jenis_surat == 'Surat Masuk"' ? 'selected' : '' }}>Surat Masuk</option>
-                    <option {{$model->jenis_surat == 'Surat Keluar' ? 'selected' : '' }}>Surat Keluar</option>
+                    <option {{$model->jenis_surat == "Surat Masuk" ? 'selected' : '' }}>Surat Masuk</option>
+                    <option {{$model->jenis_surat == "Surat Keluar" ? 'selected' : '' }}>Surat Keluar</option>
                 </select>
             </div>
             <div class="form-group">
