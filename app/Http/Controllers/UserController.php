@@ -23,7 +23,7 @@ class UserController extends Controller
     public function index()
     {
         $datas = User::all();
-        return view('User.index', compact('datas'));
+        return view('user.index', compact('datas'));
     }
 
     /**
@@ -55,7 +55,7 @@ class UserController extends Controller
 
 
 
-        return redirect('user');
+        return redirect()->route('user.index')->with('success', 'Data Berhasil di Input');
     }
 
     /**
@@ -102,7 +102,7 @@ class UserController extends Controller
 
 
 
-        return redirect('User');
+        return redirect()->route('user.index')->with('success', 'Data Berhasil di Ubah');
     }
 
     /**
@@ -115,6 +115,6 @@ class UserController extends Controller
     {
         $model =  User::find($id);
         $model->delete();
-        return redirect('User');
+        return redirect()->route('user.index')->with('success', 'Data Berhasil di Hapus');
     }
 }
