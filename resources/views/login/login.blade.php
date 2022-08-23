@@ -34,9 +34,9 @@
                     </div>
                     @endif
                     <!-- alert alert-danger d-flex align-items-center -->
-                    @if(session()->has('loginErorr'))
+                    @if(session()->has('loginError'))
                     <div style="margin-bottom: 10px; color:crimson; margin-left: 115px;" role="alert">
-                        {{session('loginErorr')}}
+                        {{session()->get('loginError')}}
                     </div>
                     @endif
                     @csrf
@@ -47,6 +47,11 @@
                                 <span class="fas fa-user"></span>
                             </div>
                         </div>
+                        @if ($errors->has('username'))
+                        <span class="margin-bottom: 10px; color:crimson; margin-left: 115px;">
+                            <strong>{{ $errors->first('username') }}</strong>
+                        </span>
+                        @endif
                     </div>
                     <div class="input-group mb-3">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>

@@ -19,7 +19,7 @@
 <!-- Main content -->
 <section class="content" style="margin-left: 20px;">
     <div class="col">
-        <form class="form-horizontal" action="{{url ('userUpdate/'.$model->id_user) }}" method="POST">
+        <form class="form-horizontal" action="{{url ('userUpdate/'.$model->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('put')}}
             <div class="form-group">
@@ -43,9 +43,9 @@
 
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="password">Password:</label>
+                <label class="control-label col-sm-2" for="password">Masukkan Password Jika diubah:</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" name="password" value="{{$model->password}}">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password baru">
                     <input type="checkbox" onclick="myFunction()"> Show Password
                 </div>
             </div>

@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'username' => 'arip',
             'nama' => 'arip',
             'email' => 'arip@gmail.com',
-            'password' => '12345',
+            'password' => Hash::make('12345'),
         ]);
     }
 }

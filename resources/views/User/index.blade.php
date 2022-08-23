@@ -70,12 +70,12 @@
                                             <td>{{ $values->username }}</td>
                                             <td>{{ $values->email }}</td>
                                             <td>
-                                                <form action="{{ route('user.destroy', $values->id_user) }}" method="post">
+                                                <form action="{{ route('user.destroy', $values->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('user.edit', $values->id_user) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
-                                                    <a href="{{ route('user.show', $values->id_user) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
-                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('user',$values->id_user)}}"> <span class="fas fa-trash"></span>
+                                                    <a href="{{ route('user.edit', $values->id) }}" class="btn btn-success btn-xs shadow"> <span class="fas fa-edit"></span></a>
+                                                    <a href="{{ route('user.show', $values->id) }}" class="btn btn-warning btn-xs shadow"> <span class="fas fa-eye"></span></a>
+                                                    <button type="submit" class="btn btn-sm btn-danger btn-xs shadow" onclick="return confirm('Yakin Ingin Menghapus {{ $values->nama }} ? ');" action="{{url('user',$values->id)}}"> <span class="fas fa-trash"></span>
                                                     </button>
                                                 </form>
                                             </td>

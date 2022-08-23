@@ -28,11 +28,11 @@ class SiswaController extends Controller
     private $searchList = [
         'nama_siswa',
         'nisn',
-        'nama_ayah',
-        'nama_ibu',
-        'kelas',
-        'nama_ayah',
-        'alamat',
+        // 'nama_ayah',
+        // 'nama_ibu',
+        // 'kelas',
+        // 'nama_ayah',
+        // 'alamat',
 
 
     ];
@@ -59,8 +59,6 @@ class SiswaController extends Controller
 
             $speedResult = $end - $start;
             $searchSpeed = $speedResult * 1000;
-        } else {
-            // $datas = Siswa::all();
         }
         return view('siswa.index', compact('datas',  'cari', 'searchSpeed'));
 

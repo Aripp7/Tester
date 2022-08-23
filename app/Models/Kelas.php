@@ -19,4 +19,8 @@ class Kelas extends Model
     {
         return $this->belongsTo(Jadwal::class);
     }
+    public function relasi()
+    {
+        return $this->belongsTo(relasi::class);
+    }
 }

@@ -9,12 +9,22 @@ use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Tendik;
 use App\Models\Surat;
-
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 
 class DashboardController extends Controller
 {
+    function Construct()
+    {
+        Siswa::all();
+        Guru::all();
+        Tendik::all();
+        Surat::all();
+        Kelas::all();
+    }
+
+
 
     private $searchList = [
         'nama_siswa',
@@ -39,24 +49,17 @@ class DashboardController extends Controller
 
         //pemanggilan boyer moore
         $search = request('search');
-        // $data1 = DB::table('siswa')->get();
-        // $data2 = DB::table('guru')->get();
-        // $data3 = DB::table('surats')->get();
-        // $data4 = DB::table('tendik')->get();
-        // $data5 = DB::table('kelas')->get();
-
-        $data1 = Siswa::all();
-        $data2 = Guru::all();
-        $data3 = Tendik::all();
-        $data4 = Surat::all();
-        $data5 = Kelas::all();
-
+        $data1 = DB::table('siswa')->get();
+        $data2 = DB::table('guru')->get();
+        $data3 = DB::table('surats')->get();
+        $data4 = DB::table('tendik')->get();
+        $data5 = DB::table('kelas')->get();
 
         $searchSpeed = null;
         if ($search) {
-            $result = BoyerMooyer::searchData($data1,  $data2, $data3, $data4,  $data5, $this->searchList, $search);
+            $result = BoyerMooyer::searchData($data1, $this->searchList, $search);
 
-            $data1 = $result['result'];
+            $tabel = $result['result'];
             $data2 = $result['result'];
             $data3 = $result['result'];
             $data4 = $result['result'];
@@ -65,7 +68,7 @@ class DashboardController extends Controller
             $searchSpeed = $result['search_speed'];
         }
 
-
+        // return view('dashboard', compact('siswa', 'tendik', 'kelas', 'guru', 'tabel',  'searchSpeed'));
         return view('dashboard', compact('siswa', 'tendik', 'kelas', 'guru', 'data1', 'data2', 'data3', 'data4',  'data5',  'searchSpeed'));
     }
 }

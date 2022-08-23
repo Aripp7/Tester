@@ -13,7 +13,7 @@
         <!-- Navbar profile -->
         <li class="dropdown">
             <img src="/public/img/icons8-user-80.png" alt="">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Admin <i class="fas fa-user"></i></a><span class="caret"></span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{Session()->get('nama')}}<i class="fas fa-user"></i></a><span class="caret"></span>
             <ul class="dropdown-menu">
                 <!-- <li>
                     <a href="profile" class="btn btn-link navbar-btn navbar-link">Profile</a>

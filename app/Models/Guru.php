@@ -21,8 +21,8 @@ class Guru extends Model
         return DB::table('guru')->where('id_guru', $id_guru)->first();
     }
 
-    public function Jadwal()
+    public function relasi()
     {
-        return $this->belongsTo(Jadwal::class);
+        return $this->belongsTo(relasi::class);
     }
 }

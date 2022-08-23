@@ -45,7 +45,7 @@
                             </table>
                         </tbody>
                     </div>
-                    <a href="{{ route('user.edit', $user->id_user) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
+                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success btn-block"> <span class="fas fa-edit"> Edit</span></a>
                 </div>
             </div>
         </div>

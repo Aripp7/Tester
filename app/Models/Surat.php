@@ -13,4 +13,9 @@ class Surat extends Model
         'id_surat', 'jenis_surat', 'nomor_surat', 'tgl_surat', 'tujuan', 'keterangan', 'file_surat'
     ];
     public $timestamps = false;
+
+    public function relasi()
+    {
+        return $this->belongsTo(relasi::class);
+    }
 }

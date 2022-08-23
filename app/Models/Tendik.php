@@ -20,4 +20,9 @@ class Tendik extends Model
     {
         return DB::table('tendik')->where('id_tendik', $id_tendik)->first();
     }
+
+    public function relasi()
+    {
+        return $this->belongsTo(relasi::class);
+    }
 }
