@@ -35,7 +35,7 @@
                     @endif
                     <!-- alert alert-danger d-flex align-items-center -->
                     @if(session()->has('loginError'))
-                    <div style="margin-bottom: 10px; color:crimson; margin-left: 115px;" role="alert">
+                    <div style="margin-bottom: 10px; color:crimson; text-align:center;" role="alert">
                         {{session()->get('loginError')}}
                     </div>
                     @endif
